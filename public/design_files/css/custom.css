@@ -1,0 +1,379 @@
+/*
+ * Version: 2.1.1
+ * File Description: Place here your custom CSS styles
+ */
+
+/* Header top start */
+.header-top {
+   background-color: #002147 !important;
+
+}
+
+#social_dropdown {
+   background-color: #002147 !important;
+}
+
+#top-header-row {
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+
+@media (max-width: 768px) {
+   .header-top .container-fluid {
+      padding: 0;
+   }
+}
+
+#header-top-drop-2 {
+   font-size: 16px;
+   padding-top: 3px;
+   /* Using whole numbers */
+   padding-bottom: 3px;
+   display: inline-flex;
+   /* Aligns content properly */
+   justify-content: center;
+   align-items: center;
+   transition: inherit;
+   /* Smooth transition */
+
+}
+
+#header-top-drop-2:hover {
+   background-color: #fdc800;
+   color: black;
+   font-size: 16px;
+
+}
+
+
+
+#social_dropdown {
+   min-width: auto !important;
+   /* Prevents unnecessary width */
+   width: max-content;
+   /* Ensures width is only as much as needed */
+   padding: 5px 10px;
+   /* Adjust padding to fit content */
+   text-align: center;
+   /* Centers icons */
+}
+
+
+#social_dropdown li a {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: 35px;
+   /* Set circular size */
+   height: 35px;
+   border-radius: 50%;
+   text-decoration: none;
+}
+
+#social_dropdown li a i {
+   font-size: 15px;
+}
+
+.list-inline {
+   font-size: 13px;
+}
+
+
+/* Header top end */
+
+/* header second start */
+#logo_img {
+   width: 85px;
+   height: 85px;
+   display: block;
+   /* Ensures no extra inline space */
+   margin: 0 auto;
+   /* Centers if needed */
+   padding: 0;
+   /* Removes unwanted padding */
+}
+
+@media (min-width: 768px) {
+   #logo_img {
+      margin-left: 20px;
+      margin-top: -10px;
+      /* Adjust to move the logo upwards */
+      padding-bottom: 0;
+      /* Remove unnecessary padding */
+   }
+}
+
+
+/* Mobile View (Less Space) */
+@media (max-width: 767px) {
+   #logo_img {
+      width: 75px;
+      /* Slightly smaller logo for mobile */
+      height: 75px;
+      margin-top: -5px;
+      /* Moves the logo up */
+      margin-bottom: -5px;
+      /* Moves the logo up */
+   }
+}
+
+.site-slogan {
+   font-size: 28px;
+   margin-top: -11px;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: 300;
+   color: black;
+}
+
+@media (max-width: 767px) {
+   .site-slogan {
+      font-size: 25px;
+      /* Adjust font size for mobile */
+   }
+}
+
+.site-slogan a {
+   text-decoration: none;
+   color: black;
+}
+
+.header-image {
+   margin: 0;
+   /* Remove margin */
+   padding: 0;
+   /* Remove padding */
+}
+
+.header-image img {
+   display: block;
+   /* Remove any space below the image */
+   width: 95%;
+   /* Ensure the image takes full width of its container */
+}
+
+/* Center all menu items */
+.navbar-nav {
+   margin-top: 5px;
+}
+
+/* Change font size of the menu items with higher specificity */
+.navbar-nav .nav-item .nav-link {
+   color: black !important;
+   /* Dark black color */
+   font-size: 20px !important;
+   /* Adjust font size as per your preference */
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+}
+
+/* Change the color of dropdown arrows */
+.navbar-nav .nav-item .dropdown-toggle::after {
+   color: #000 !important;
+   /* Dark black color for the arrow */
+}
+
+/* Style the dropdown menu */
+.dropdown-menu {
+   background-color: #002147 !important;
+   /* Set background color */
+   border: none !important;
+   /* Remove border */
+}
+
+/* Style the dropdown menu items */
+.dropdown-menu .dropdown-item {
+   color: white !important;
+   /* Set text color */
+   border-top: 0.1px solid gray !important;
+   /* Add gray border */
+   border-bottom: none !important;
+   font-family: 'roboto', sans-serif;
+   font-weight: 400;
+   font-size: 15px !important;
+
+}
+
+/* Change the text color on hover */
+.dropdown-menu .dropdown-item:hover {
+   background-color: #002147 !important;
+   /* Darker blue on hover */
+   color: #fdc800 !important;
+}
+
+/* header second end */
+
+
+
+/* image slider start */
+/* Carousel Height for Larger Screens */
+/* Carousel Height for Larger Screens */
+@media (min-width: 991px) {
+   .carousel-item {
+      height: 737px;
+   }
+}
+    
+
+
+/* Circular Carousel Indicators */
+.carousel-indicators li {
+   width: 12px;
+   height: 12px;
+   background-color: gray;
+   border-radius: 50%; /* Makes them circular */
+   margin: 0 5px; /* Spacing between indicators */
+   cursor: pointer;
+ }
+ 
+ @media (max-width: 768px) {
+   .carousel-indicators li {
+      width: 8px;
+      height: 8px;
+      margin: 0 3px;
+   }
+ }
+ .carousel-indicators .active {
+   background-color: white;
+   transform: scale(1.3); /* Increases the size of the active indicator */
+ }
+ 
+
+/* Caption Styling */
+/* Carousel Slide Background Opacity */
+.carousel-item::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.3);
+   /* Black overlay with 40% opacity */
+   z-index: 1;
+}
+
+
+
+/* Ensure the carousel caption stays above the overlay */
+.carousel-caption {
+   position: absolute;
+   top: 50%;
+   left: 12%;
+   transform: translateY(-50%);
+   z-index: 2;
+   text-align: left;
+   color: white;
+}
+
+.carousel-caption h1 {
+   font-size: 45px;
+   font-weight: bold;
+   line-height: 1.2;
+}
+
+.carousel-caption h2 {
+   font-size: 35px;
+   font-weight: bold;
+   margin-top: 5px;
+   /* color: ; */
+}
+
+.carousel-caption p {
+   font-size: 20px;
+   max-width: 600px;
+   margin-top: 10px;
+   line-height: 1.5;
+   color: white;
+   font-weight: 400;
+}
+
+.carousel-caption .btn {
+   background-color: #FFC107;
+   color: black;
+   padding: 8px 16px;
+   font-size: 16px;
+   text-transform: uppercase;
+   border: none;
+   border-radius: 5px;
+   margin-top: 15px;
+   font-weight: 900;
+}
+
+/* Navigation Arrows Styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+   background-color: black;
+   border-radius: 50%;
+   width: 32px;
+   height: 32px;
+}
+
+
+@media (max-width: 768px) {
+   .carousel-caption {
+      top: 40%;
+      /* bottom: 10%; */
+      left: 10%;
+      text-align: left;
+   }
+
+   .carousel-caption h1 {
+      font-size: 22px;
+   }
+
+   .carousel-caption h2 {
+      font-size: 16px;
+   }
+
+   .carousel-caption p {
+      font-size: 10px;
+      max-width: 300px;
+      margin-top: -5px;
+   }
+
+   .carousel-caption .btn {
+      padding: 8px 12px;
+      font-size: 12px;
+      margin-top: -5px;
+   }
+}
+
+/* Custom Navigation Styling */
+.carousel-custom-nav {
+   position: absolute;
+   top: 50%;
+   left: 1.5%;
+   right: 1.5%;
+   z-index: 10;
+   display: flex;
+   justify-content: space-between;
+   transform: translateY(-50%);
+   pointer-events: none;
+   font-size: 20px;
+}
+
+.carousel-custom-nav a:hover
+{
+   color: #002147;
+}
+.carousel-custom-nav a {
+   pointer-events: all;
+   color: white;
+   padding: 8px 16px;
+   text-decoration: none;
+   font-weight: bold;
+   border-radius: 4px;
+   position: relative;
+   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+   .carousel-custom-nav {
+      font-size: 10px;
+      left: -1%;
+      right: -1%;
+   }
+}
+
+/* image slider end */
