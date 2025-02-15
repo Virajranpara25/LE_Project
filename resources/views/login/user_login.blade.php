@@ -5,7 +5,7 @@
 @section('content')
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="row w-75 shadow-lg rounded overflow-hidden bg-white custom-shadow">
-        
+
         <!-- Left Side: Image (Hidden on Small Screens) -->
         <div class="col-md-6 d-none d-md-block p-0">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
@@ -18,10 +18,25 @@
             <form action="{{ route('login') }}" method="POST">
                 @csrf
 
-                <div class="mb-3">
-                    <label class="form-label" for="email">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-control form-control-lg" value="{{ old('email') }}" required />
-                    <span class="error-msg">@error('email') {{ $message }} @enderror</span>
+
+                <!-- Dropdown for User Role -->
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="user_role">Select Role</label>
+                    <select id="user_role" name="user_role" class="form-control form-control-lg" required>
+                        <option value="">-- Select Role --</option>
+                        <option value="hod" {{ old('user_role') == 'hod' ? 'selected' : '' }}>HOD</option>
+                        <option value="student" {{ old('user_role') == 'student' ? 'selected' : '' }}>STUDENT</option>
+                        <option value="admin" {{ old('user_role') == 'admin' ? 'selected' : '' }}>ADMIN</option>
+                    </select>
+                    <span class="error-msg">@error('user_role') {{ $message }} @enderror</span>
+                </div>
+
+
+                <!-- Enrollment Number Field -->
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="enrollment_number">Enrollment Number</label>
+                    <input type="text" id="enrollment_number" name="enrollment_number" class="form-control form-control-lg" value="{{ old('enrollment_number') }}" required />
+                    <span class="error-msg">@error('enrollment_number') {{ $message }} @enderror</span>
                 </div>
 
                 <div class="mb-3">
@@ -35,9 +50,9 @@
                 <div class="text-center mt-3">
                     <a href="#" class="text-muted">Forgot password?</a>
                 </div>
-                <p class="text-center text-muted mt-3">
+                <!-- <p class="text-center text-muted mt-3">
                     <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
-                </p>
+                </p> -->
             </form>
         </div>
     </div>
@@ -74,9 +89,11 @@
         .container {
             padding: 20px;
         }
+
         h3 {
             font-size: 24px;
         }
+
         .text-center {
             font-size: 14px;
         }
