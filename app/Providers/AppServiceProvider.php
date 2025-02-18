@@ -17,8 +17,9 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        //
+        view()->share('layout', 'layouts.master'); // This forces all views to use the layout
     }
+    
 }

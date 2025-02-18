@@ -61,4 +61,4 @@
     </div>
 </footer>
 
-<!-- FontAwesome for Social Icons -->
+<!-- FontAwesome for Social Icons --><?php /**PATH G:\xampp\htdocs\LE_PROJECT_LARAVEL\LE_Project\resources\views/partials/footer.blade.php ENDPATH**/ ?>

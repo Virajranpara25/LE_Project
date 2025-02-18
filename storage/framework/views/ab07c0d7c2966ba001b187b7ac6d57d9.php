@@ -230,4 +230,4 @@
   </div>
 </body>
 
-</html>
+</html><?php /**PATH G:\xampp\htdocs\LE_PROJECT_LARAVEL\LE_Project\resources\views/partials/header.blade.php ENDPATH**/ ?>
