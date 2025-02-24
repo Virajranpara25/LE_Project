@@ -1,7 +1,16 @@
   
-  
 
   <?php $__env->startSection('title', 'LE College(Diploma), Morbi'); ?>
+
+  <?php $__env->startSection('css'); ?>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+
+  <?php $__env->stopSection(); ?>
+
 
   <?php $__env->startSection('content'); ?>
 
@@ -95,6 +104,123 @@
 
   <!-- introduction to LE college end -->
 
+  <!-- Department Section Start -->
+  <div id="courses" class="courses-area py-5" style="background-image: url('design_files/images/Background.png');">
+    <div class="container" style="max-width: 1220px; padding: 20px;"> <!-- Made it fluid to extend to edges -->
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+          <div class="section-title mb-4">
+            <h1 class="text">DEPARTMENTS</h1>
+            <p class="text-white">"Every Success is Usually an Admission ticket to a new set of Decision"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="swiper-container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Department Cards -->
+            <div class="swiper-slide">
+              <div class="card h-100">
+                <img src="design_files/images/course_1.png" class="card-img-top" alt="Information Technology">
+                <div class="card-body">
+                  <h5 class="card-title">Information Technology</h5>
+                  <p class="card-text">Focuses on using computers to store, process, and analyze data. Prepares students for careers in software development, networking, and cybersecurity.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <a href="course_details.html" class="btn_viewDetails">View Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card h-100">
+                <img src="design_files/images/course_2.png" class="card-img-top" alt="Mechanical Engineering">
+                <div class="card-body">
+                  <h5 class="card-title">Mechanical Engineering</h5>
+                  <p class="card-text">Involves designing, analyzing, and manufacturing mechanical systems. Covers thermodynamics, robotics, and industrial automation.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <a href="course_details.html" class="btn_viewDetails">View Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card h-100">
+                <img src="design_files/images/course_3.png" class="card-img-top" alt="Civil Engineering">
+                <div class="card-body">
+                  <h5 class="card-title">Civil Engineering</h5>
+                  <p class="card-text">Specializes in designing, constructing, and maintaining infrastructure. Includes bridges, buildings, roads, and water systems.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <a href="course_details.html" class="btn_viewDetails">View Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card h-100">
+                <img src="design_files/images/course_4.png" class="card-img-top" alt="Ceramic Engineering">
+                <div class="card-body">
+                  <h5 class="card-title">Ceramic Engineering</h5>
+                  <p class="card-text">Studies the production and application of ceramic materials. Used in electronics, medical implants, and advanced construction.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <a href="course_details.html" class="btn_viewDetails">View Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="card h-100">
+                <img src="design_files/images/course_5.png" class="card-img-top" alt="ICT">
+                <div class="card-body">
+                  <h5 class="card-title">ICT</h5>
+                  <p class="card-text">Integrates computing and telecommunication to manage digital information. Covers networking, cloud computing, and cybersecurity.</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <a href="course_details.html" class="btn_viewDetails">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Navigation (Outside Cards) -->
+
+      </div>
+
+    </div>
+    <a class="swiper-prev" href="#">Prev</a>
+    <a class="swiper-next" href="#">Next</a>
+  </div>
+
+  <!-- Department Section End -->
+<!-- Video Section Start -->
+<div class="video-area">
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div class="col-12">
+                <div class="video-wrapper">
+                    <video class="video-fluid" autoplay loop muted playsinline>
+                        <source src="design_files/videos/L.E College.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Video Section End -->
+
+
 
   <!--quick access section start -->
   <!-- ================ -->
@@ -129,62 +255,12 @@
   <br>
   <?php $__env->stopSection(); ?>
 
+
   <?php $__env->startSection('js'); ?>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const carouselElement = document.querySelector('#carouselExampleIndicators');
-      const carousel = new bootstrap.Carousel(carouselElement, {
-        interval: 6000, // Auto-slide interval in milliseconds
-        ride: 'carousel',
-        pause: false,
-      });
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="design_files/js/Swiper.js" type="text/javascript"></script>
 
-      // Custom navigation buttons
-      document.querySelector('.carousel-prev').addEventListener('click', function(e) {
-        e.preventDefault();
-        carousel.prev();
-      });
-
-      document.querySelector('.carousel-next').addEventListener('click', function(e) {
-        e.preventDefault();
-        carousel.next();
-      });
-
-      // Ensure indicators are updated correctly
-      carouselElement.addEventListener('slid.bs.carousel', function() {
-        const activeIndex = [...carouselElement.querySelectorAll('.carousel-item')].findIndex(item => item.classList.contains('active'));
-        updateIndicators(activeIndex);
-      });
-
-      function updateIndicators(activeIndex) {
-        document.querySelectorAll('.carousel-indicators li').forEach((indicator, index) => {
-          indicator.classList.toggle('active', index === activeIndex);
-        });
-      }
-
-
-    });
-  </script>
-
-<script>
-  // Create an intersection observer to trigger the animation
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      // If the element is in the viewport, add the 'visible' class
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Stop observing after animation
-      }
-    });
-  }, { threshold: 0.5 }); // 50% of the element needs to be visible
-
-  // Target the elements to animate
-  const elementsToAnimate = document.querySelectorAll('.text-animation, .image-animation');
-  elementsToAnimate.forEach(el => {
-    observer.observe(el); // Observe each element
-  });
-</script>
-  
 
   <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.master_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp\htdocs\LE_PROJECT_LARAVEL\LE_Project\resources\views/homepage/index.blade.php ENDPATH**/ ?>

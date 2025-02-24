@@ -730,47 +730,53 @@
    background-color: #002147;
 
 }
+
 /* Set the elements to be hidden initially */
 .text-animation,
 .image-animation {
-    opacity: 0;
-    transform: translateX(0);
+   opacity: 0;
+   transform: translateX(0);
 }
 
 /* Add the animation when visible */
 .text-animation.visible {
-    animation: slideInLeft 1s ease-out forwards;
+   animation: slideInLeft 1s ease-out forwards;
 }
 
 .image-animation.visible {
-    animation: slideInRight 1s ease-out forwards;
+   animation: slideInRight 1s ease-out forwards;
 }
 
 /* Define the slide-in animations */
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+   from {
+      opacity: 0;
+      transform: translateX(-100px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
 }
 
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+   from {
+      opacity: 0;
+      transform: translateX(100px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
 }
 
 
 @media (max-width:768px) {
+
+
+
 
    #introduction_container h2 {
       font-size: 24px;
@@ -781,12 +787,12 @@
    }
 
    #introduction_container p {
-     
+
       font-size: 16px;
       line-height: 24px;
-   
+
    }
-   
+
    #introduction_container img {
       width: 500px;
       height: 300px;
@@ -799,51 +805,220 @@
 /* introduction to LE college end */
 
 
-/* login page start */
 
-#login_container
-{
-   padding-top: 10px4;
+/* Department start */
+
+
+/* Background and spacing */
+.courses-area {
+   background-size: cover;
+   background-position: center;
+   position: relative;
 }
 
- /* Apply a Blue Box Shadow */
- .custom-shadow {
-   box-shadow: 0px 4px 15px rgba(0, 0, 255, 0.3) !important;
+/* Swiper buttons */
+
+/* Card Styling */
+.card {
+   border: none;
+   transition: transform 0.3s ease-in-out;
+   height: 470px !important;
+   width: 360px !important;
 }
 
-/* Full Height Image */
-.full-height {
-   height: 100%;
+.card:hover {
+   transform: translateY(-5px);
+}
+
+/* Card Image */
+.card-img-top {
+   height: 240px;
    object-fit: cover;
 }
 
-/* Error Message Styling */
-.error-msg {
-   color: red;
-   font-size: 14px;
-   display: block;
-   margin-top: 4px;
+/* Footer */
+.card-footer {
+   background: #f8f9fa;
 }
 
-/* Centering Form */
-.d-flex.flex-column.justify-content-center {
-   min-height: 85vh;
+/* Button Styling */
+
+/* Section title */
+.section-title h1 {
+   font-size: 36px;
+   font-weight: bold;
+   color: #fdc800;
+   font-family: 'roboto' sans-serif;
 }
 
-/* Mobile Adjustments */
+.section-title p {
+   font-size: 18px;
+   font-weight: 400;
+   padding-bottom: 20px;
+}
+
+/* Card Styling */
+
+/* Card Body */
+.card-body {
+   padding: 15px;
+   background-color: white;
+}
+
+.card-title {
+   font-size: 19px;
+   font-weight: bold;
+   color: #002147;
+}
+
+.card-text {
+   font-size: 16px;
+   color: #5d5d5d;
+   font-weight: 400;
+   text-align: justify;
+   padding: 5px 0px 0px 0px;
+   /* max-width: 320px; */
+}
+
+.card-footer span {
+   font-size: 17px;
+   color: #555;
+   font-weight: 400;
+}
+
+.btn_viewDetails {
+   color: #002147 !important;
+   text-decoration: none !important;
+   font-weight: 600
+}
+
+.swiper-prev,
+.swiper-next {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 20px;
+   font-weight: bold;
+   color: white;
+   text-decoration: none;
+   cursor: pointer;
+   z-index: 1000;
+}
+
+.swiper-prev {
+   left: 25px;
+}
+
+.swiper-next {
+   right: 25px;
+}
+
+.swiper-prev:hover,
+.swiper-next:hover {
+   text-decoration: none;
+   color: #fdc800;
+}
+
+@keyframes zoomFadeIn {
+   from {
+       opacity: 0;
+       transform: scale(0.8);
+   }
+   to {
+       opacity: 1;
+       transform: scale(1);
+   }
+}
+
+/* Initially hide cards */
+.swiper-slide {
+   opacity: 0;
+   transform: scale(0.8);
+   transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+/* Apply animation only when class "animate" is added */
+.swiper-slide.animate {
+   animation: zoomFadeIn 1.2s ease-in-out forwards;
+}
+
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-   .container {
-       padding: 20px;
+   .section-title h1 {
+      font-size: 26px;
    }
 
-   h3 {
-       font-size: 24px;
+
+   .section-title p {
+      font-size: 14px;
    }
 
-   .text-center {
-       font-size: 14px;
+   .card {
+      height: 440px !important;
+      width: 330px !important;
    }
+
+   .card-img-top {
+      height: 220px;
+   }
+
+   .card-title {
+      font-size: 17px;
+   }
+
+   .card-text {
+      font-size: 14px;
+   }
+
+
+   .swiper-prev,
+   .swiper-next {
+
+      font-size: 16px;
+   }
+
+
+   .swiper-prev {
+      left: 20px;
+   }
+
+   .swiper-next {
+      right: 20px;
+   }
+
+   
+.swiper-slide {
+   display: flex;
+   justify-content: center; /* Ensures cards are centered */
+   padding-left: 57px;
+   width: 80%;
 }
 
+}
 
-/* login page end */
+/* Department end*/
+
+/* video start */
+
+.video-area {
+   position: relative;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+.video-wrapper {
+   width: 100%;
+   height: 100%;
+}
+
+.video-fluid {
+   width: 100%;
+   height: 100%;
+   object-fit: cover; /* Ensures it covers the full screen */
+}
+
+/* video end */
