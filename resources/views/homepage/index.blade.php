@@ -38,7 +38,7 @@
           <h1>Welcome To</h1>
           <h2>L.E. College (Diploma), Morbi</h2>
           <p>To provide an atmosphere for student and faculty for continuous learning to investigate, apply, and transfer knowledge</p>
-          <a class="btn btn-warning text-dark" href="#">Login</a>
+          <a class="btn btn-warning text-dark" href="{{route('login')}}">Login</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -47,7 +47,7 @@
           <h1>Welcome To</h1>
           <h2>L.E. College (Diploma), Morbi</h2>
           <p>To provide an atmosphere for student and faculty for continuous learning to investigate, apply, and transfer knowledge</p>
-          <a class="btn btn-warning text-dark" href="#">Login</a>
+          <a class="btn btn-warning text-dark" href="{{route('login')}}">Login</a>
         </div>
       </div>
     </div>

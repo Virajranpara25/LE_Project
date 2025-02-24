@@ -89,12 +89,12 @@
               <div class="header-first clearfix d-flex align-items-center justify-content-between">
                 <!-- logo -->
                 <div id="logo" class="logo">
-                  <a href="{{route('index')}}"><img id="logo_img" src="design_files/images/logo.png" alt="LE College"></a>
+                  <a href="<?php echo e(route('index')); ?>"><img id="logo_img" src="design_files/images/logo.png" alt="LE College"></a>
                 </div>
 
                 <!-- name-and-slogan -->
                 <div class="site-slogan text-right">
-                  <a href="{{route('index')}}">L.E. College</a>
+                  <a href="<?php echo e(route('index')); ?>">L.E. College</a>
                 </div>
               </div>
               <!-- header-first end -->
@@ -230,4 +230,4 @@
   </div>
 </body>
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\LE_Project\resources\views/partials/header.blade.php ENDPATH**/ ?>
