@@ -798,52 +798,119 @@
 
 /* introduction to LE college end */
 
+/* login page start here */
 
-/* login page start */
 
-#login_container
-{
-   padding-top: 10px4;
+/* 1.Alternatively, you can target all labels in your form: */
+.form-label {
+   font-weight: 600; /* Adjust as needed */
+   font-size: 16px;
+   color: #000;
 }
 
- /* Apply a Blue Box Shadow */
- .custom-shadow {
-   box-shadow: 0px 4px 15px rgba(0, 0, 255, 0.3) !important;
+/* 2. Card Wrapper: fixed max-width to control size */
+.login-card {
+   max-width: 800px; /* Adjust to match your desired width */
+   width: 100%;
+   margin: 40px auto; /* This sets 40px top and bottom margin, auto left/right */
 }
 
-/* Full Height Image */
+/* 3. Image Takes Full Column Height */
 .full-height {
    height: 100%;
-   object-fit: cover;
+   object-fit: cover; /* Crop the image nicely */
 }
 
-/* Error Message Styling */
+/* 4. Logo Styling */
+.logo-img {
+   max-width: 120px; /* Adjust as needed */
+   height: auto;
+   display: block;
+   margin: 0 auto;
+
+}
+
+/* 5. Error Message Styling */
 .error-msg {
    color: red;
    font-size: 14px;
-   display: block;
    margin-top: 4px;
+   display: block;
 }
 
-/* Centering Form */
-.d-flex.flex-column.justify-content-center {
-   min-height: 85vh;
+/* 6. Box Shadow (optional) */
+.shadow-lg {
+   box-shadow: 0px 4px 15px rgba(89, 89, 95, 0.2) !important;
 }
 
-/* Mobile Adjustments */
+/* 7. Responsive Tweaks */
 @media (max-width: 768px) {
-   .container {
-       padding: 20px;
+   .login-card {
+       width: 90% !important; /* narrower on mobile */
    }
+   .d-none.d-md-block {
+       display: none !important; /* hide the left image on mobile */
+   }
+}
+/* 8. login button color */
+.custom-login-btn {
+   background-color: #002147; /* Your desired color */
+   border-color: #002147;     /* Matching border color */
+}
 
-   h3 {
-       font-size: 24px;
-   }
+/* Optionally, add hover styles */
+.custom-login-btn:hover {
+   background-color: #FFC107;
+   border-color: #FFC107;
+}
 
-   .text-center {
-       font-size: 14px;
-   }
+/* login page over here */
+
+/* register page strat here */
+.btn-md {
+   padding: 0.5rem 1rem;  /* Adjust padding as desired */
+   font-size: 1rem;       /* Adjust font size */
+   border-radius: 0.25rem; /* Optional: adjust border radius */
+}
+/* Lottie container inside card */
+.lottie-card-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   pointer-events: none; /* Allow clicks to pass through */
+   opacity: 1; /* Adjust for visibility */
+}
+
+/* Register card - same dimensions as login card */
+.register-card {
+   max-width: 800px;
+   width: 100%;
+   margin: 0 auto;
+   position: relative;
+   z-index: 2;  /* Ensure card is above Lottie */
+}
+
+/* Form Container (Above Lottie) */
+.form-container {
+   position: relative;
+   z-index: 2; /* Above the Lottie animation */
+   background: rgba(255, 255, 255, 0.656); /* Add slight opacity */
+   padding: 20px;
+   border-radius: 10px;
+}
+.form-control {
+   border: 2px solid #000; /* Black border */
+   box-shadow: none;       /* Remove default shadow if desired */
+   font-weight: 500;       /* Slightly bolder text, adjust as needed */
+   color: black !important;  /* Ensures text color is black */
+}
+.form-control:focus {
+   border-color: #000000e0;     /* Keep black border on focus */
+   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25); /* optional focus ring */
 }
 
 
-/* login page end */
+/* register page over here */

@@ -1,9 +1,9 @@
   
-  @extends('layouts.master_layout')
+  
 
-  @section('title', 'LE College(Diploma), Morbi')
+  <?php $__env->startSection('title', 'LE College(Diploma), Morbi'); ?>
 
-  @section('content')
+  <?php $__env->startSection('content'); ?>
 
   <!-- image slider start -->
   <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -20,7 +20,7 @@
           <h1>Welcome To</h1>
           <h2>L.E. College (Diploma), Morbi</h2>
           <p>To provide an atmosphere for student and faculty for continuous learning to investigate, apply, and transfer knowledge</p>
-          <a class="btn btn-warning text-dark" href="{{route('login')}}">Login</a>
+          <a class="btn btn-warning text-dark" href="<?php echo e(route('login')); ?>">Login</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -29,7 +29,7 @@
           <h1>Welcome To</h1>
           <h2>L.E. College (Diploma), Morbi</h2>
           <p>To provide an atmosphere for student and faculty for continuous learning to investigate, apply, and transfer knowledge</p>
-          <a class="btn btn-warning text-dark" href="{{route('login')}}">Login</a>
+          <a class="btn btn-warning text-dark" href="<?php echo e(route('login')); ?>">Login</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -38,7 +38,7 @@
           <h1>Welcome To</h1>
           <h2>L.E. College (Diploma), Morbi</h2>
           <p>To provide an atmosphere for student and faculty for continuous learning to investigate, apply, and transfer knowledge</p>
-          <a class="btn btn-warning text-dark" href="{{route('login')}}">Login</a>
+          <a class="btn btn-warning text-dark" href="<?php echo e(route('login')); ?>">Login</a>
         </div>
       </div>
     </div>
@@ -127,9 +127,9 @@
   <br>
   <br>
   <br>
-  @endsection
+  <?php $__env->stopSection(); ?>
 
-  @section('js')
+  <?php $__env->startSection('js'); ?>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const carouselElement = document.querySelector('#carouselExampleIndicators');
@@ -186,4 +186,5 @@
 </script>
   
 
-  @endsection
+  <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\LE_Project\resources\views/homepage/index.blade.php ENDPATH**/ ?>
