@@ -1,8 +1,6 @@
-@extends('layouts.simple_content_layout')
+<?php $__env->startSection('title', 'Register'); ?>
 
-@section('title', 'Register')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="login-background d-flex justify-content-center align-items-center min-vh-100">
     <!-- Register Card with Internal Lottie Animation -->
     <div class="row register-card shadow-lg rounded overflow-hidden bg-white position-relative" id="register-card">
@@ -23,8 +21,8 @@
             
             <h3 class="text-center mb-4 " style="font-weight: 800;">Register Here</h3>
             <div class="form-wrapper mx-auto">
-                <form action="{{ route('register') }}" method="POST">
-                    @csrf
+                <form action="<?php echo e(route('register')); ?>" method="POST">
+                    <?php echo csrf_field(); ?>
                     <!-- Row 1: Name and Email -->
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -105,4 +103,5 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.simple_content_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp\htdocs\LE_PROJECT_LARAVEL\LE_Project\resources\views/Login_Registers/Register.blade.php ENDPATH**/ ?>

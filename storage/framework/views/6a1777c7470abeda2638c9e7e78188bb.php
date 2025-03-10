@@ -38,7 +38,7 @@
           <h1>Welcome To</h1>
           <h2>L.E. College (Diploma), Morbi</h2>
           <p>To provide an atmosphere for student and faculty for continuous learning to investigate, apply, and transfer knowledge</p>
-          <a class="btn btn-warning text-dark" href="#">Login</a>
+          <a class="btn btn-warning text-dark" href="<?php echo e(route('login')); ?>">Login</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -47,7 +47,7 @@
           <h1>Welcome To</h1>
           <h2>L.E. College (Diploma), Morbi</h2>
           <p>To provide an atmosphere for student and faculty for continuous learning to investigate, apply, and transfer knowledge</p>
-          <a class="btn btn-warning text-dark" href="#">Login</a>
+          <a class="btn btn-warning text-dark" href="<?php echo e(route('login')); ?>">Login</a>
         </div>
       </div>
     </div>
@@ -203,28 +203,101 @@
   </div>
 
   <!-- Department Section End -->
-<!-- Video Section Start -->
-<div class="video-area">
+  <!-- Video Section Start -->
+  <div class="video-area">
     <div class="container-fluid p-0">
-        <div class="row">
-            <div class="col-12">
-                <div class="video-wrapper">
-                    <video class="video-fluid" autoplay loop muted playsinline>
-                        <source src="design_files/videos/L.E College.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+      <div class="row">
+        <div class="col-12">
+          <div class="video-wrapper">
+            <video class="video-fluid" autoplay loop muted playsinline>
+              <source src="design_files/videos/L.E College.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Video Section End -->
+
+  <!-- Principal's Message start -->
+  <section class="container my-5" id="introduction_container">
+    <div class="row align-items-center">
+      <!-- Title (Always First) -->
+      <div class="col-12">
+        <h2 class="fw-bold text-left text-md-start">Principal's Message</h2>
+        <div class="mt-2" id="introduction_hr"></div>
+      </div>
+
+      <!-- Image Column (After Title in Mobile, Right Side in Desktop) -->
+      <div class="col-lg-5 col-md-6 text-center order-1 order-md-2" id="Principal_img" >
+        <img src="design_files/images/Principal_sir.jpg"  class="img-fluid rounded shadow image-animation"  alt="L.E. College">
+      </div>
+
+      <!-- Text Column (After Image in Mobile, Left Side in Desktop) -->
+      <div class="col-lg-7 col-md-6 order-2 order-md-1 text-animation" id="Principal_msg">
+        <p class="text-muted">
+          Lukhdhirji Engineering College (Diploma), Morbi is one of the oldest Government institutes of Gujarat State. Previously, the institute was functioning from old campus along with Lukhdhirji Engineering College (Degree) courses, Morbi. Recently, the institute has shifted to the new campus that has all required infrastructure for teaching and other activities.In addition, our campus has hostel and sports facilities for students. The library of our institute is very rich in terms of books and journals collections, and is growing rapidly and steadily. The institute has also well equipped laboratories including language laboratory.In addition, our campus has hostel and sports facilities for students.
+        </p>
+        <p>
+          One of our greatest strengths is our highly qualified and dedicated faculty members and staff. Our students are very innovative and ever eager to learn new concepts. Apart from teaching, our faculty members are deeply engaged in motivating and counseling students so that they can find better placement.
+        </p>
+        <p>
+          Our students have demonstrated their capabilities and brilliance by securing placement in highly reputed organizations. Our faculties regularly present their research findings in various academic conferences. It may be pertinent to mention that the students in collaboration with the teachers have successfully organized many sports and cultural events. L.E. College, (Diploma) promises the quality education adhering to its vision and mission.
+        </p>
+        <p>
+          - Pankaj V. Rayjada, I/C Principal, L.E. College(Diploma),Morbi
+
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principal's Message end -->
+
+  <!-- Vision-Mission Start -->
+
+  <div class="container-fluid vision-mission-section" style="background-image: url('design_files/images/Background.png');">
+        <div class="container" id="Vision_mission_container">
+            <div class="row text-center">
+                <div class="col-md-5">
+                    <h2>Vision</h2>
+                    <ul class="text-left">
+                        <li>To provide skill-based technical education with innovative ideas and practices that fulfill the needs of individuals, organizations, and society.</li>
+                    </ul>
+                </div>
+              
+                <!-- Divider: Vertical on Desktop, Horizontal on Mobile -->
+                <div class="col-md-2 d-none d-md-flex align-items-center justify-content-center">
+                    <div class="divider-vertical"></div>
+                </div>
+                <div class="col-12 d-md-none">
+                    <div class="divider-horizontal"></div>
+                </div>
+                <div class="col-md-5">
+                  <h2>Mission</h2>
+                    <ul class="text-left">
+                        <li>Creating high-quality and globally compatible diploma technocrats.</li>
+                        <li>Ensuring optimal utilization of available resources to cultivate required competency among students.</li>
+                        <li>Providing a conducive environment that enhances intellectual and moral standards for students and faculties.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Video Section End -->
+
+
+
+  <!-- Vision-Mission end -->
+
+
+
 
 
 
   <!--quick access section start -->
   <!-- ================ -->
-  <section class="section clearfix">
+  <!-- <section class="section clearfix">
     <div class="container-fluid">
       <div class="row justify-content-lg-center">
         <div class="col-lg-12">
@@ -242,9 +315,53 @@
       </div>
     </div>
 
-  </section>
+  </section> -->
   <!--quick access section end -->
 
+  <!--Latest news section start -->
+
+
+
+  <div class="container py-5" id="Latest_News_Container">
+    <h2 class="text-center fw-bold">Latest News</h2>
+    <p class="text-center text-muted" id="Latest_News_P">Stay updated with the latest developments in education, learning methodologies, and global academic trends..</p>
+
+    <div class="row g-4" id="Latest_news_row">
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="news-card shadow-sm">
+                <h6 class="text-center">Department</h6>
+                <p class="text-left date">AUGUST 25, 2018</p>
+                <h5 class="text">Some say education is the process of gaining information is nation.</h5>
+                <p class="text" style="padding-bottom: 10px;">Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis scele.</p>
+                <p class="text-center"><a href="#">Read more</a></p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="news-card shadow-sm">
+                <h6 class="text-center">Department</h6>
+                <p class="text-left date">AUGUST 25, 2018</p>
+                <h5 class="text">Education gives us a knowledge of the world around us and changes</h5>
+                <p class="text" style="padding-bottom: 10px;">Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis scele.</p>
+                <p class="text-center"><a href="#">Read more</a></p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="news-card shadow-sm">
+                <h6 class="text-center">Department</h6>
+                <p class="text-left date">AUGUST 25, 2018</p>
+                <h5 class="text">One thing I wish I can do is, to provide education for all child left behind</h5>
+                <p class="text" style="padding-bottom: 10px;">Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis scele.</p>
+                <p class="text-center"><a href="#">Read more</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="#" class="view-more-btn">View More</a>
+    </div>
+</div>
+
+  <!--Latest news section end -->
 
 
 
