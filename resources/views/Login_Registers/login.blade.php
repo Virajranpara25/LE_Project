@@ -8,7 +8,7 @@
     <div class="row login-card shadow-lg rounded overflow-hidden bg-white" id="login-card">
         
         <!-- Left Side: Image (Hidden on Small Screens) -->
-        <div class="col-md-5 d-none d-md-block p-0">
+        <div class="col-md-5  p-0 " id="hideimg" >
             <img src="design_files/images/Student.jpg"
                  alt="Login Form"
             
@@ -20,7 +20,7 @@
             <div class="text-center mb-4">
                 <img src="design_files/images/logo.png" alt="LE College" class="logo-img">
             </div>
-            <h3 class="text-center mb-4">Welcome Login Here </h3>
+            <h3  id="headinglbl">Welcome Login Here </h3>
             
             <form action="{{ route('login') }}" method="POST">
                 @csrf

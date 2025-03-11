@@ -820,14 +820,18 @@
    height: 100%;
    object-fit: cover; /* Crop the image nicely */
 }
-
 /* 4. Logo Styling */
 .logo-img {
    max-width: 120px; /* Adjust as needed */
    height: auto;
    display: block;
-   margin: 0 auto;
+   margin: 0px auto;
 
+}
+#headinglbl{
+   padding: 0px;
+   margin: 0px;
+   text-align: center;
 }
 
 /* 5. Error Message Styling */
@@ -848,7 +852,7 @@
    .login-card {
        width: 90% !important; /* narrower on mobile */
    }
-   .d-none.d-md-block {
+   #hideimg {
        display: none !important; /* hide the left image on mobile */
    }
 }

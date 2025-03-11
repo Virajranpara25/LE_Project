@@ -101,9 +101,6 @@
                         </div>
                     </div>
                     <button class="btn btn-dark btn-lg w-100 custom-login-btn" type="submit">Register</button>
-                    <div class="text-center mt-3">
-                        <a href="{{ route('login') }}" class="text-muted">Already have an account? Login</a>
-                    </div>
                 </form>
             </div>
         </div>
