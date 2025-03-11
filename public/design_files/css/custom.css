@@ -730,47 +730,53 @@
    background-color: #002147;
 
 }
+
 /* Set the elements to be hidden initially */
 .text-animation,
 .image-animation {
-    opacity: 0;
-    transform: translateX(0);
+   opacity: 0;
+   transform: translateX(0);
 }
 
 /* Add the animation when visible */
 .text-animation.visible {
-    animation: slideInLeft 1s ease-out forwards;
+   animation: slideInLeft 1s ease-out forwards;
 }
 
 .image-animation.visible {
-    animation: slideInRight 1s ease-out forwards;
+   animation: slideInRight 1s ease-out forwards;
 }
 
 /* Define the slide-in animations */
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+   from {
+      opacity: 0;
+      transform: translateX(-100px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
 }
 
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+   from {
+      opacity: 0;
+      transform: translateX(100px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
 }
 
 
 @media (max-width:768px) {
+
+
+
 
    #introduction_container h2 {
       font-size: 24px;
@@ -781,12 +787,12 @@
    }
 
    #introduction_container p {
-     
+
       font-size: 16px;
       line-height: 24px;
-   
+
    }
-   
+
    #introduction_container img {
       width: 500px;
       height: 300px;
@@ -798,31 +804,259 @@
 
 /* introduction to LE college end */
 
+
+
+/* Department start */
+
+
+/* Background and spacing */
+.courses-area {
+   background-size: cover;
+   background-position: center;
+   position: relative;
+}
+
+/* Swiper buttons */
+
+/* Card Styling */
+.card {
+   border: none;
+   transition: transform 0.3s ease-in-out;
+   height: 470px !important;
+   width: 360px !important;
+}
+
+.card:hover {
+   transform: translateY(-5px);
+}
+
+/* Card Image */
+.card-img-top {
+   height: 240px;
+   object-fit: cover;
+}
+
+/* Footer */
+.card-footer {
+   background: #f8f9fa;
+}
+
+/* Button Styling */
+
+/* Section title */
+.section-title h1 {
+   font-size: 36px;
+   font-weight: bold;
+   color: #fdc800;
+   font-family: 'roboto' sans-serif;
+}
+
+.section-title p {
+   font-size: 18px;
+   font-weight: 400;
+   padding-bottom: 20px;
+}
+
+/* Card Styling */
+
+/* Card Body */
+.card-body {
+   padding: 15px;
+   background-color: white;
+}
+
+.card-title {
+   font-size: 19px;
+   font-weight: bold;
+   color: #002147;
+}
+
+.card-text {
+   font-size: 16px;
+   color: #5d5d5d;
+   font-weight: 400;
+   text-align: justify;
+   padding: 5px 0px 0px 0px;
+   /* max-width: 320px; */
+}
+
+.card-footer span {
+   font-size: 17px;
+   color: #555;
+   font-weight: 400;
+}
+
+.btn_viewDetails {
+   color: #002147 !important;
+   text-decoration: none !important;
+   font-weight: 600
+}
+
+.swiper-prev,
+.swiper-next {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 20px;
+   font-weight: bold;
+   color: white;
+   text-decoration: none;
+   cursor: pointer;
+   z-index: 1000;
+}
+
+.swiper-prev {
+   left: 25px;
+}
+
+.swiper-next {
+   right: 25px;
+}
+
+.swiper-prev:hover,
+.swiper-next:hover {
+   text-decoration: none;
+   color: #fdc800;
+}
+
+@keyframes zoomFadeIn {
+   from {
+      opacity: 0;
+      transform: scale(0.8);
+   }
+
+   to {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+/* Initially hide cards */
+.swiper-slide {
+   opacity: 0;
+   transform: scale(0.8);
+   transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+/* Apply animation only when class "animate" is added */
+.swiper-slide.animate {
+   animation: zoomFadeIn 1.2s ease-in-out forwards;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+   .section-title h1 {
+      font-size: 26px;
+   }
+
+
+   .section-title p {
+      font-size: 14px;
+   }
+
+   .card {
+      height: 440px !important;
+      width: 330px !important;
+   }
+
+   .card-img-top {
+      height: 220px;
+   }
+
+   .card-title {
+      font-size: 17px;
+   }
+
+   .card-text {
+      font-size: 14px;
+   }
+
+
+   .swiper-prev,
+   .swiper-next {
+
+      font-size: 16px;
+   }
+
+
+   .swiper-prev {
+      left: 20px;
+   }
+
+   .swiper-next {
+      right: 20px;
+   }
+
+
+   .swiper-slide {
+      display: flex;
+      justify-content: center;
+      /* Ensures cards are centered */
+      padding-left: 57px;
+      width: 80%;
+   }
+
+}
+
+/* Department end*/
+
+/* video start */
+
+.video-area {
+   position: relative;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+.video-wrapper {
+   width: 100%;
+   height: 100%;
+}
+
+.video-fluid {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   /* Ensures it covers the full screen */
+}
+
+/* video end */
+
+
 /* login page start here */
 
 
 /* 1.Alternatively, you can target all labels in your form: */
 .form-label {
-   font-weight: 600; /* Adjust as needed */
+   font-weight: 600;
+   /* Adjust as needed */
    font-size: 16px;
    color: #000;
 }
 
 /* 2. Card Wrapper: fixed max-width to control size */
 .login-card {
-   max-width: 800px; /* Adjust to match your desired width */
+   max-width: 800px;
+   /* Adjust to match your desired width */
    width: 100%;
-   margin: 40px auto; /* This sets 40px top and bottom margin, auto left/right */
+   margin: 40px auto;
+   /* This sets 40px top and bottom margin, auto left/right */
 }
 
 /* 3. Image Takes Full Column Height */
 .full-height {
    height: 100%;
-   object-fit: cover; /* Crop the image nicely */
+   object-fit: cover;
+   /* Crop the image nicely */
 }
 /* 4. Logo Styling */
 .logo-img {
-   max-width: 120px; /* Adjust as needed */
+   max-width: 120px;
+   /* Adjust as needed */
    height: auto;
    display: block;
    margin: 0px auto;
@@ -850,16 +1084,22 @@
 /* 7. Responsive Tweaks */
 @media (max-width: 768px) {
    .login-card {
-       width: 90% !important; /* narrower on mobile */
+      width: 90% !important;
+      /* narrower on mobile */
    }
-   #hideimg {
-       display: none !important; /* hide the left image on mobile */
+
+   .d-none.d-md-block {
+      display: none !important;
+      /* hide the left image on mobile */
    }
 }
+
 /* 8. login button color */
 .custom-login-btn {
-   background-color: #002147; /* Your desired color */
-   border-color: #002147;     /* Matching border color */
+   background-color: #002147;
+   /* Your desired color */
+   border-color: #002147;
+   /* Matching border color */
 }
 
 /* Optionally, add hover styles */
@@ -872,10 +1112,14 @@
 
 /* register page strat here */
 .btn-md {
-   padding: 0.5rem 1rem;  /* Adjust padding as desired */
-   font-size: 1rem;       /* Adjust font size */
-   border-radius: 0.25rem; /* Optional: adjust border radius */
+   padding: 0.5rem 1rem;
+   /* Adjust padding as desired */
+   font-size: 1rem;
+   /* Adjust font size */
+   border-radius: 0.25rem;
+   /* Optional: adjust border radius */
 }
+
 /* Lottie container inside card */
 .lottie-card-bg {
    position: absolute;
@@ -884,8 +1128,10 @@
    width: 100%;
    height: 100%;
    z-index: 1;
-   pointer-events: none; /* Allow clicks to pass through */
-   opacity: 1; /* Adjust for visibility */
+   pointer-events: none;
+   /* Allow clicks to pass through */
+   opacity: 1;
+   /* Adjust for visibility */
 }
 
 /* Register card - same dimensions as login card */
@@ -894,27 +1140,250 @@
    width: 100%;
    margin: 0 auto;
    position: relative;
-   z-index: 2;  /* Ensure card is above Lottie */
+   z-index: 2;
+   /* Ensure card is above Lottie */
 }
 
 /* Form Container (Above Lottie) */
 .form-container {
    position: relative;
-   z-index: 2; /* Above the Lottie animation */
-   background: rgba(255, 255, 255, 0.656); /* Add slight opacity */
+   z-index: 2;
+   /* Above the Lottie animation */
+   background: rgba(255, 255, 255, 0.656);
+   /* Add slight opacity */
    padding: 20px;
    border-radius: 10px;
 }
+
 .form-control {
-   border: 2px solid #000; /* Black border */
-   box-shadow: none;       /* Remove default shadow if desired */
-   font-weight: 500;       /* Slightly bolder text, adjust as needed */
-   color: black !important;  /* Ensures text color is black */
+   border: 2px solid #000;
+   /* Black border */
+   box-shadow: none;
+   /* Remove default shadow if desired */
+   font-weight: 500;
+   /* Slightly bolder text, adjust as needed */
+   color: black !important;
+   /* Ensures text color is black */
 }
+
 .form-control:focus {
-   border-color: #000000e0;     /* Keep black border on focus */
-   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25); /* optional focus ring */
+   border-color: #000000e0;
+   /* Keep black border on focus */
+   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+   /* optional focus ring */
 }
 
 
 /* register page over here */
+
+
+/* principal message start here */
+
+#Principal_img img {
+   width: 305px;
+   height: 420px;
+   object-fit: cover;
+   margin-left: 120px;
+}
+
+#Principal_msg p {
+   margin-bottom: -5px;
+}
+
+@media (max-width:768px) {
+   #Principal_img img {
+      width: 245px;
+      height: 350px;
+      object-fit: cover;
+      margin-left: 110px;
+   }
+}
+
+/* principal message end here */
+
+
+/* Vision - Mission start here */
+
+
+.vision-mission-section {
+   color: white;
+   padding: 60px 0px;
+   font-family: 'Roboto' sans-serif;
+}
+
+.divider-vertical {
+   border-left: 3px solid #fdc800;
+   height: 100%;
+}
+
+.divider-horizontal {
+   border-top: 3px solid #fdc800;
+   width: 97%;
+   margin-left: 18px;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.vision-mission-section h2 {
+   color: #fdc800;
+   font-weight: 600;
+   font-size: 32px;
+}
+
+.vision-mission-section li {
+   font-size: 19px;
+   text-align: justify;
+   font-weight: 300;
+}
+
+#Vision_mission_container {
+   max-width: 1250px;
+}
+
+@media (max-width:768px) {
+   .vision-mission-section h2 {
+      font-size: 26px;
+      margin-left: 10px;
+   }
+
+   .vision-mission-section li {
+      font-size: 16px;
+
+   }
+
+   #Vision_mission_container {
+      margin-left: -10px;
+   }
+
+   .vision-mission-section {
+      padding: 50px 0px;
+   }
+}
+
+
+/* Vision - Mission end here */
+
+
+/* Latest News start here */
+
+
+#Latest_News_Container {
+   font-family: 'roboto' sans-serif;
+   max-width: 1250px;
+}
+
+#Latest_news_row {
+   padding-bottom: 40px;
+}
+
+#Latest_News_Container h2 {
+   color: #002147;
+   font-weight: 600;
+   font-size: 30px;
+}
+
+#Latest_News_P {
+   font-weight: 500;
+   font-size: 18px;
+   padding-bottom: 25px;
+   margin-top: -5px;
+}
+
+.news-card {
+   background: #ffffff;
+   border: 1.7px solid #ddd;
+   /* Light border to make it visible */
+   padding: 15px 15px 0px 20px;
+   transition: 0.3s;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+   border-radius: 8px;
+   /* Rounded corners for a modern look */
+}
+
+.news-card h6 {
+   font-weight: bold;
+   color: black;
+   font-size: 16px;
+   padding-bottom: 10px;
+}
+
+.news-card .date {
+   font-size: 14px;
+   color: #666;
+   font-weight: bold;
+}
+
+.news-card h5 {
+   font-weight: bold;
+   color: #000;
+   font-size: 15.5px;
+}
+
+.news-card p {
+   color: #666;
+   font-weight: 500;
+}
+
+.news-card a {
+   font-weight: bold;
+   text-decoration: none;
+   color: #000;
+   font-size: 16px;
+
+}
+
+.news-card a:hover {
+
+   color: #fdc800;
+
+}
+
+.view-more-btn {
+   background: #002147;
+   color: #fff;
+   font-size: 19px;
+   padding: 10px 30px;
+   border-radius: 24px;
+   text-decoration: none;
+   font-weight: 500;
+
+}
+
+.view-more-btn:hover {
+   background: #fdc800;
+   color: black;
+   text-decoration: none;
+
+}
+
+
+@media (max-width:768px) {
+
+   #Latest_news_row {
+      padding-left: 16px;
+      padding-right: 16px;
+   }
+
+   #Latest_News_Container h2 {
+      font-size: 26px;
+   }
+   
+   #Latest_News_P {
+      font-size: 15px;
+      
+   }
+
+   .view-more-btn {
+    
+      font-size: 17px;
+   
+   }
+
+   #Latest_news_row {
+      padding-bottom: 15px;
+   }
+
+}
+
+/* Latest News end here */

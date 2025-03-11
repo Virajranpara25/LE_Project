@@ -1,44 +1,62 @@
 /*
  * Version: 2.1.1
  */
+// Image slider start
+document.addEventListener('DOMContentLoaded', function() {
+	const carouselElement = document.querySelector('#carouselExampleIndicators');
+	const carousel = new bootstrap.Carousel(carouselElement, {
+	  interval: 6000, // Auto-slide interval in milliseconds
+	  ride: 'carousel',
+	  pause: false,
+	});
 
-// Notify Plugin - Code for the demo site of HtmlCoder
-// You can delete the code below
-//-----------------------------------------------
-(function($) {
+	// Custom navigation buttons
+	document.querySelector('.carousel-prev').addEventListener('click', function(e) {
+	  e.preventDefault();
+	  carousel.prev();
+	});
 
-	"use strict";
+	document.querySelector('.carousel-next').addEventListener('click', function(e) {
+	  e.preventDefault();
+	  carousel.next();
+	});
 
-	$(document).ready(function() {
-		if (($(".main-navigation.onclick").length>0) && $(window).width() > 991 ){
-			$.notify({
-				// options
-				message: 'The Dropdowns of the Main Menu, are now open with click on Parent Items. Click "Home" to checkout this behavior.'
-			},{
-				// settings
-				type: 'info',
-				delay: 10000,
-				offset : {
-					y: 150,
-					x: 20
-				}
-			});
-		};
-		if (!($(".main-navigation.animated").length>0) && $(window).width() > 991 && $(".main-navigation").length>0){
-			$.notify({
-				// options
-				message: 'The animations of main menu are disabled.'
-			},{
-				// settings
-				type: 'info',
-				delay: 10000,
-				offset : {
-					y: 150,
-					x: 20
-				}
-			}); // End Notify Plugin - The above code (from line 14) is used for demonstration purposes only
+	// Ensure indicators are updated correctly
+	carouselElement.addEventListener('slid.bs.carousel', function() {
+	  const activeIndex = [...carouselElement.querySelectorAll('.carousel-item')].findIndex(item => item.classList.contains('active'));
+	  updateIndicators(activeIndex);
+	});
 
-		};
-	}); // End document ready
+	function updateIndicators(activeIndex) {
+	  document.querySelectorAll('.carousel-indicators li').forEach((indicator, index) => {
+		indicator.classList.toggle('active', index === activeIndex);
+	  });
+	}
 
-})(jQuery);
+
+  });
+// Image slider end
+
+
+
+
+// introduction start
+// Create an intersection observer to trigger the animation
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+	// If the element is in the viewport, add the 'visible' class
+	if (entry.isIntersecting) {
+	  entry.target.classList.add('visible');
+	  observer.unobserve(entry.target); // Stop observing after animation
+	}
+  });
+}, { threshold: 0.3 }); // 50% of the element needs to be visible
+
+// Target the elements to animate
+const elementsToAnimate = document.querySelectorAll('.text-animation, .image-animation');
+elementsToAnimate.forEach(el => {
+  observer.observe(el); // Observe each element
+});
+// introduction end
+
+

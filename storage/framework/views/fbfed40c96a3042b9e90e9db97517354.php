@@ -50,7 +50,8 @@
 
     <!-- Custom css -->
     <link href="design_files/css/custom.css" rel="stylesheet">
-
+    
+  
     <?php echo $__env->yieldContent('css'); ?>
 </head>
 
@@ -59,6 +60,11 @@
     <div class="content">
         <?php echo $__env->yieldContent('content'); ?>
     </div>
+ 
+    <!-- Put the Lottie script before the closing body tag -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js" type="module"></script>
+
+
     <!-- JavaScript files placed at the end of the document so the pages load faster -->
     <!-- ================================================== -->
     <!-- Jquery and Bootstap core js files -->
