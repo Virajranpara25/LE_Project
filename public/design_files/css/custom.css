@@ -802,7 +802,7 @@
 
 }
 
-/* introduction to LE college end */
+/******************************************* introduction to LE college end */
 
 
 
@@ -1027,7 +1027,7 @@
 /* video end */
 
 
-/* login page start here */
+/*************************************************** login page start here *********************************/
 
 
 /* 1.Alternatively, you can target all labels in your form: */
@@ -1036,6 +1036,8 @@
    /* Adjust as needed */
    font-size: 16px;
    color: #000;
+   padding-bottom: 0px;
+   margin-top: 12px;
 }
 
 /* 2. Card Wrapper: fixed max-width to control size */
@@ -1088,9 +1090,8 @@
       /* narrower on mobile */
    }
 
-   .d-none.d-md-block {
-      display: none !important;
-      /* hide the left image on mobile */
+   #hideimg {  
+      display: none !important; /* Hide the image column on small screens */
    }
 }
 
@@ -1100,6 +1101,7 @@
    /* Your desired color */
    border-color: #002147;
    /* Matching border color */
+   margin-bottom: 4px !important;
 }
 
 /* Optionally, add hover styles */
@@ -1107,10 +1109,186 @@
    background-color: #FFC107;
    border-color: #FFC107;
 }
+#forgetpasstxt{
+   color: #0a1a2c;
+   font-weight: 500;
+}
 
-/* login page over here */
 
-/* register page strat here */
+/******************************************** Custom Css For  of forget password Model *******************************/
+
+  /* Modal Overlay */
+  .modal-overlay {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.4);
+   backdrop-filter: blur(3px);
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+   background: white;
+   padding: 20px;
+   border-radius: 10px;
+   width: 90%;
+   max-width: 400px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   text-align: center;
+   position: relative;
+}
+.forgotlbl{
+   color: black !important;
+}
+
+/* Close Button */
+.close-btn {
+   position: absolute;
+   top: 10px;
+   right: 15px;
+   font-size: 20px;
+   cursor: pointer;
+}
+
+/* Blur Effect */
+.blur {
+   filter: blur(2px);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+   .modal-content {
+       width: 90%;
+   }
+}
+#SendOtpBtn{
+   background-color: #002147;
+   /* Your desired color */
+   border-color: #002147;
+   /* Matching border color */
+   margin: top 8px !important;
+ 
+
+}
+
+/* css for verify otp and timer*/
+.otp-timer {
+   font-size: 16px;
+   font-weight: bold;
+   text-align: center;
+   color: #ff0000;
+   margin-bottom: 8px;
+}
+
+.resend-text {
+   text-align: center;
+   font-size: 14px;
+   margin-top: 0px !important;
+   color: #002147 !important;
+   text-decoration: none;
+}
+
+.otp-input-container {
+   display: flex;
+   justify-content: center;
+   gap: 8px;
+   margin-bottom: 15px;
+}
+
+.otp-input {
+   width: 40px;
+   height: 50px;
+   font-size: 24px;
+   text-align: center;
+   border: 2px solid #002147;
+   border-radius: 5px;
+   outline: none;
+   transition: border-color 0.3s;
+}
+
+.otp-input:focus {
+   border-color: #FFC107;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+   .otp-input {
+       width: 35px;
+       height: 45px;
+       font-size: 20px;
+   }
+}
+
+/******************************** login page and model over here **********************************/
+
+/********************************* RESET PASSWORD PAGE START ***************************************/
+.reset-password-container {
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   background: url('../design_files/images/background.jpg') no-repeat center center / cover;
+
+}
+
+.reset-password-card {
+   display: flex;
+   max-width: 700px;
+   width: 100%;
+   background: white;
+   border-radius: 15px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   border-radius: 20px;
+}
+
+.lottie-container {
+   background: #f5f5f5;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex: 1;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+}
+
+.form-container {
+   flex: 1;
+   padding: 30px;
+}
+
+.resetlbl {
+   color: #000;
+   font-weight: bold;
+}
+
+.custom-input {
+   border-radius: 8px;
+   padding: 10px;
+   font-size: 16px;
+}
+
+.custom-btn {
+   padding: 12px;
+   font-size: 18px;
+   border-radius: 8px;
+   background-color: #002147;
+   border-color: #002147;
+}
+.custom-btn:hover{
+   background-color: #FFC107;
+   border-color: #FFC107;
+}
+
+/************************************* RESET PASSWORD PAGE OVER ***************************/
+
+/************************************* register page strat here ****************************/
 .btn-md {
    padding: 0.5rem 1rem;
    /* Adjust padding as desired */
@@ -1174,10 +1352,10 @@
 }
 
 
-/* register page over here */
+/********************************************************* register page over here *************************/
 
 
-/* principal message start here */
+/********************************************************* principal message start here ********************/
 
 #Principal_img img {
    width: 305px;
@@ -1199,10 +1377,10 @@
    }
 }
 
-/* principal message end here */
+/************************************************** principal message end here ******************/
 
 
-/* Vision - Mission start here */
+/****************************************************** Vision - Mission start here *****************/
 
 
 .vision-mission-section {
@@ -1261,10 +1439,10 @@
 }
 
 
-/* Vision - Mission end here */
+/************************************** Vision - Mission end here ****************************/
 
 
-/* Latest News start here */
+/************************************* Latest News start here **********************************/
 
 
 #Latest_News_Container {
@@ -1386,4 +1564,4 @@
 
 }
 
-/* Latest News end here */
+/***************************************************** Latest News end here *************************8/

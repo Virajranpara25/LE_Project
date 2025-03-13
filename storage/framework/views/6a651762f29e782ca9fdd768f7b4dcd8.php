@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Register'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -20,9 +18,7 @@
 
         <!-- Card Content: Registration Form -->
         <div class="col-md-12 p-4 d-flex flex-column justify-content-center position-relative form-container">
-            <div class="text-center mb-4">
-                <img src="design_files/images/logo.png" alt="LE College" class="logo-img">
-            </div>
+            
             <h3 class="text-center mb-4 " style="font-weight: 800;">Register Here</h3>
             <div class="form-wrapper mx-auto">
                 <form action="<?php echo e(route('register')); ?>" method="POST">

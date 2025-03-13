@@ -50,7 +50,10 @@
 
     <!-- Custom css -->
     <link href="design_files/css/custom.css" rel="stylesheet">
-    
+
+    <!-- Font Awesome link for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
   
     @yield('css')
 </head>
