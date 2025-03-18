@@ -1,0 +1,1567 @@
+/*
+ * Version: 2.1.1
+ * File Description: Place here your custom CSS styles
+ */
+
+/* Header top start */
+@media (max-width: 768px) {
+
+   html,
+   body {
+      overflow-x: hidden;
+      width: 100%;
+   }
+}
+
+.header-top {
+   background-color: #002147 !important;
+
+}
+
+#social_dropdown {
+   background-color: #002147 !important;
+}
+
+#instagram a:hover {
+   background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+   /* Instagram hover effect */
+}
+
+#top-header-row {
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+
+@media (max-width: 768px) {
+   .header-top .container-fluid {
+      padding: 0;
+   }
+}
+
+#header-top-drop-2 {
+   font-size: 16px;
+   padding-top: 3px;
+   /* Using whole numbers */
+   padding-bottom: 3px;
+   display: inline-flex;
+   /* Aligns content properly */
+   justify-content: center;
+   align-items: center;
+   transition: inherit;
+   /* Smooth transition */
+
+}
+
+#header-top-drop-2:hover {
+   background-color: #fdc800;
+   color: black;
+   font-size: 16px;
+
+}
+
+
+
+#social_dropdown {
+   min-width: auto !important;
+   /* Prevents unnecessary width */
+   width: max-content;
+   /* Ensures width is only as much as needed */
+   padding: 5px 10px;
+   /* Adjust padding to fit content */
+   text-align: center;
+   /* Centers icons */
+}
+
+
+#social_dropdown li a {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: 35px;
+   /* Set circular size */
+   height: 35px;
+   border-radius: 50%;
+   text-decoration: none;
+}
+
+#social_dropdown li a i {
+   font-size: 15px;
+}
+
+.list-inline {
+   font-size: 13px;
+}
+
+
+/* Header top end */
+
+/* header second start */
+#logo_img {
+   width: 85px;
+   height: 85px;
+   display: block;
+   /* Ensures no extra inline space */
+   margin: 0 auto;
+   /* Centers if needed */
+   padding: 0;
+   /* Removes unwanted padding */
+}
+
+@media (min-width: 768px) {
+   #logo_img {
+      margin-left: 20px;
+      margin-top: -10px;
+      /* Adjust to move the logo upwards */
+      padding-bottom: 0;
+      /* Remove unnecessary padding */
+   }
+}
+
+
+/* Mobile View (Less Space) */
+@media (max-width: 767px) {
+   #logo_img {
+      width: 75px;
+      /* Slightly smaller logo for mobile */
+      height: 75px;
+      margin-top: -5px;
+      /* Moves the logo up */
+      margin-bottom: -5px;
+      /* Moves the logo up */
+   }
+}
+
+.site-slogan {
+   font-size: 28px;
+   margin-top: -11px;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: 300;
+   color: black;
+}
+
+@media (max-width: 767px) {
+   .site-slogan {
+      font-size: 25px;
+      /* Adjust font size for mobile */
+
+   }
+}
+
+.site-slogan a {
+   text-decoration: none;
+   color: black;
+}
+
+.header-image {
+   margin: 0;
+   /* Remove margin */
+   padding: 0;
+   /* Remove padding */
+}
+
+.header-image img {
+   display: block;
+   /* Remove any space below the image */
+   width: 95%;
+   /* Ensure the image takes full width of its container */
+}
+
+/* Center all menu items */
+.navbar-nav {
+   margin-top: 5px;
+}
+
+/* Change font size of the menu items with higher specificity */
+.navbar-nav .nav-item .nav-link {
+   color: black !important;
+   /* Dark black color */
+   font-size: 20px !important;
+   /* Adjust font size as per your preference */
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+}
+
+/* Change the color of dropdown arrows */
+.navbar-nav .nav-item .dropdown-toggle::after {
+   color: #000 !important;
+   /* Dark black color for the arrow */
+}
+
+/* Style the dropdown menu */
+.dropdown-menu {
+   background-color: #002147 !important;
+   /* Set background color */
+   border: none !important;
+   /* Remove border */
+}
+
+/* Style the dropdown menu items */
+.dropdown-menu .dropdown-item {
+   color: white !important;
+   /* Set text color */
+   border-top: 0.1px solid gray !important;
+   /* Add gray border */
+   border-bottom: none !important;
+   font-family: 'roboto', sans-serif;
+   font-weight: 400;
+   font-size: 15px !important;
+
+}
+
+/* Change the text color on hover */
+.dropdown-menu .dropdown-item:hover {
+   background-color: #002147 !important;
+   /* Darker blue on hover */
+   color: #fdc800 !important;
+}
+
+/* header second end */
+
+
+
+/* image slider start */
+/* Carousel Height for Larger Screens */
+/* Carousel Height for Larger Screens */
+@media (min-width: 991px) {
+   .carousel-item {
+      height: 737px;
+   }
+}
+
+
+
+/* Circular Carousel Indicators */
+.carousel-indicators li {
+   width: 12px;
+   height: 12px;
+   background-color: gray;
+   border-radius: 50%;
+   /* Makes them circular */
+   margin: 0 5px;
+   /* Spacing between indicators */
+   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+   .carousel-indicators li {
+      width: 8px;
+      height: 8px;
+      margin: 0 3px;
+
+   }
+}
+
+.carousel-indicators .active {
+   background-color: white;
+   transform: scale(1.3);
+   /* Increases the size of the active indicator */
+}
+
+
+/* Caption Styling */
+/* Carousel Slide Background Opacity */
+.carousel-item::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.1);
+   /* Black overlay with 40% opacity */
+   z-index: 1;
+}
+
+
+
+/* Ensure the carousel caption stays above the overlay */
+.carousel-caption {
+   position: absolute;
+   top: 50%;
+   left: 12%;
+   transform: translateY(-50%);
+   z-index: 2;
+   text-align: left;
+   color: white;
+}
+
+.carousel-caption h1 {
+   font-size: 45px;
+   font-weight: bold;
+   line-height: 1.2;
+}
+
+.carousel-caption h2 {
+   font-size: 35px;
+   font-weight: bold;
+   margin-top: 5px;
+   /* color: ; */
+}
+
+.carousel-caption p {
+   font-size: 20px;
+   max-width: 600px;
+   margin-top: 10px;
+   line-height: 1.5;
+   color: white;
+   font-weight: 400;
+
+}
+
+.carousel-caption .btn {
+   background-color: #FFC107;
+   color: black;
+   padding: 8px 16px;
+   font-size: 16px;
+   text-transform: uppercase;
+   border: none;
+   border-radius: 5px;
+   margin-top: 15px;
+   font-weight: 900;
+}
+
+/* Navigation Arrows Styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+   background-color: black;
+   border-radius: 50%;
+   width: 32px;
+   height: 32px;
+
+}
+
+
+@media (max-width: 768px) {
+   .carousel-caption {
+      top: 42%;
+      /* bottom: 10%; */
+      left: 10%;
+      text-align: left;
+   }
+
+   .carousel-caption h1 {
+      font-size: 22px;
+   }
+
+   .carousel-caption h2 {
+      font-size: 16px;
+   }
+
+   .carousel-caption p {
+      font-size: 10px;
+      max-width: 300px;
+      margin-top: -5px;
+   }
+
+   .carousel-caption .btn {
+      padding: 7px 10px;
+      font-size: 10px;
+      margin-top: -5px;
+   }
+}
+
+/* Custom Navigation Styling */
+.carousel-custom-nav {
+   position: absolute;
+   top: 50%;
+   left: 1.5%;
+   right: 1.5%;
+   z-index: 10;
+   display: flex;
+   justify-content: space-between;
+   transform: translateY(-50%);
+   pointer-events: none;
+   font-size: 20px;
+}
+
+.carousel-custom-nav a:hover {
+   color: #002147;
+}
+
+.carousel-custom-nav a {
+   pointer-events: all;
+   color: white;
+   padding: 8px 16px;
+   text-decoration: none;
+   font-weight: bold;
+   border-radius: 4px;
+   position: relative;
+   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+   .carousel-custom-nav {
+      font-size: 10px;
+      left: -1%;
+      right: -0.2%;
+
+   }
+}
+
+.carousel-inner {
+   display: flex;
+   align-items: center;
+}
+
+.carousel-item {
+   transition: transform 0.6s ease-in-out;
+}
+
+
+/* image slider end */
+
+
+
+/* footer start */
+
+#Social_icon {
+   background-color: #fdc800;
+   width: 80%;
+   max-width: 400px;
+   height: 80px;
+   border-radius: 100px;
+   border: 4px solid #002147;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+
+#social_area {
+   top: -40px;
+
+}
+
+.social-links {
+   list-style: none;
+   padding: 0;
+   margin-left: 12px;
+   display: flex;
+   gap: 12px;
+   /* More space between icons */
+}
+
+.social-links li {
+   display: inline-block;
+
+}
+
+.social-links li a {
+   background-color: #002147;
+   color: white;
+   font-size: 18px;
+   /* Increased icon size */
+   width: 40px;
+   height: 40px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   /* Circular icons */
+   text-decoration: none;
+   transition: 0.3s ease-in-out;
+
+}
+
+#footer_firstpart {
+   margin-top: -30px;
+}
+
+#footer_firstpart h5 {
+   font-size: 20px !important;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: 600;
+
+}
+
+
+#footer_firstpart p {
+   /* font-size: 16px; */
+   text-align: justify;
+   font-family: 'roboto', sans-serif;
+
+}
+
+#footer_contact p {
+
+   font-family: 'roboto', sans-serif;
+   margin-left: -5px;
+
+}
+
+/* for desktop size */
+@media (min-width: 991px) {
+
+   footer {
+      padding: 0px 0px 0px 50px;
+   }
+
+   #footer_firstpart {
+      margin-top: -30px;
+   }
+
+   #footer_firstpart h5 {
+      font-size: 27px !important;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 600;
+   }
+
+   #footer_firstpart img {
+      width: 100px;
+      height: 100px;
+      max-width: 150px !important;
+   }
+
+   #footer_firstpart p {
+      font-size: 19px;
+      max-width: 370px;
+      text-align: justify;
+      font-family: 'roboto', sans-serif;
+
+
+   }
+
+   #footer_quicklinks h5 {
+      font-size: 21px;
+   }
+
+   #footer_quicklinks li {
+      font-size: 19px;
+      font-family: 'roboto', sans-serif;
+      text-align: center;
+      margin-right: 70px;
+   }
+
+   #footer_contact h5 {
+      font-size: 21px;
+      margin-left: 7px;
+   }
+
+   #footer_contact p {
+      font-size: 18px;
+      font-family: 'roboto', sans-serif;
+      text-align: left;
+      max-width: 260px;
+   }
+
+
+   #footer_map h5 {
+      font-size: 21px;
+
+   }
+
+   #Social_icon {
+      background-color: #fdc800;
+      width: 80%;
+      max-width: 1200px;
+      height: 100px;
+      border-radius: 100px;
+      border: 4px solid #002147;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   #social_area {
+      top: -50px;
+      max-width: 1450px;
+
+   }
+
+
+   .social-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 25px;
+      /* More space between icons */
+   }
+
+   .social-links li {
+      display: inline-block;
+   }
+
+   .social-links li a {
+      background-color: #002147;
+      color: white;
+      font-size: 27px;
+      /* Increased icon size */
+      width: 55px;
+      height: 55px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      /* Circular icons */
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+   }
+
+
+}
+
+/* footer end */
+
+
+
+/* quick access section start */
+
+.navbarone {
+   margin-bottom: 20px;
+   width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   flex-wrap: wrap;
+   /* Ensures items wrap correctly on small screens */
+   overflow: hidden;
+   /* Prevents overflow and horizontal scrollbar */
+   padding: 0;
+   /* Remove any padding from navbar */
+}
+
+.navbarone a {
+   flex: 1;
+   /* Makes each link take equal space */
+   padding: 10px;
+   color: white;
+   /* Text color */
+   text-align: center;
+   text-decoration: none;
+   /* font-weight: bold; */
+   font-size: 20px;
+   background-color: #002147;
+   /* Background color */
+   border: 1px solid #fdc800;
+   /* Black border */
+   border-radius: 5px;
+   /* Rounded corners */
+   margin: 5px;
+   /* Space around each link */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-sizing: border-box;
+   /* Includes padding and border in width calculations */
+}
+
+.navbarone a:hover {
+   background-color: #fdc800;
+   color: black;
+   font-weight: 400;
+   border: 1px solid #002147;
+
+   /* Light gray hover effect */
+}
+
+.navbarone a:active {
+   background-color: #002147;
+   /* Active link background color */
+}
+
+.navbarone i {
+   margin-right: 3px;
+   /* Adds space after the icon */
+}
+
+@media screen and (max-width: 768px) {
+   .navbarone {
+      flex-direction: column;
+      /* Stack the items vertically on small screens */
+   }
+
+   .navbarone a {
+      justify-content: center;
+      width: 100%;
+      /* Full width on small screens */
+      text-align: left;
+      /* Align text to the left on mobile */
+      margin: 0;
+      /* Remove side margins in mobile view */
+      padding-left: 20px;
+      /* Add padding to the left for the text */
+      margin-bottom: 5px;
+   }
+}
+
+/* quick access section end */
+
+
+
+/* introduction to LE college start */
+
+/* for desktop size */
+
+#introduction_container {
+   max-width: 1250px;
+}
+
+#introduction_container h2 {
+   color: #002147;
+   text-transform: capitalize;
+   font-family: 'robot' sans-serif;
+   font-weight: 600;
+   font-size: 30px;
+}
+
+#introduction_container p {
+   color: #717171 !important;
+   font-size: 18px;
+   font-weight: 500;
+   font-family: 'open-sens ' sans-serif;
+   text-align: justify;
+   line-height: 30px;
+   padding-top: 20px;
+
+
+}
+
+#introduction_container img {
+   width: 500px;
+   height: 310px;
+   object-fit: cover;
+}
+
+#introduction_hr {
+   width: 1250px;
+   height: 2.5px;
+   background-color: #002147;
+
+}
+
+/* Set the elements to be hidden initially */
+.text-animation,
+.image-animation {
+   opacity: 0;
+   transform: translateX(0);
+}
+
+/* Add the animation when visible */
+.text-animation.visible {
+   animation: slideInLeft 1s ease-out forwards;
+}
+
+.image-animation.visible {
+   animation: slideInRight 1s ease-out forwards;
+}
+
+/* Define the slide-in animations */
+@keyframes slideInLeft {
+   from {
+      opacity: 0;
+      transform: translateX(-100px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+@keyframes slideInRight {
+   from {
+      opacity: 0;
+      transform: translateX(100px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+
+@media (max-width:768px) {
+
+
+
+
+   #introduction_container h2 {
+      font-size: 24px;
+   }
+
+   #introduction_hr {
+      width: 455px;
+   }
+
+   #introduction_container p {
+
+      font-size: 16px;
+      line-height: 24px;
+
+   }
+
+   #introduction_container img {
+      width: 500px;
+      height: 300px;
+      object-fit: cover;
+      padding-top: 20px;
+   }
+
+}
+
+/******************************************* introduction to LE college end */
+
+
+
+/* Department start */
+
+
+/* Background and spacing */
+.courses-area {
+   background-size: cover;
+   background-position: center;
+   position: relative;
+}
+
+/* Swiper buttons */
+
+/* Card Styling */
+.card {
+   border: none;
+   transition: transform 0.3s ease-in-out;
+   height: 470px !important;
+   width: 360px !important;
+}
+
+.card:hover {
+   transform: translateY(-5px);
+}
+
+/* Card Image */
+.card-img-top {
+   height: 240px;
+   object-fit: cover;
+}
+
+/* Footer */
+.card-footer {
+   background: #f8f9fa;
+}
+
+/* Button Styling */
+
+/* Section title */
+.section-title h1 {
+   font-size: 36px;
+   font-weight: bold;
+   color: #fdc800;
+   font-family: 'roboto' sans-serif;
+}
+
+.section-title p {
+   font-size: 18px;
+   font-weight: 400;
+   padding-bottom: 20px;
+}
+
+/* Card Styling */
+
+/* Card Body */
+.card-body {
+   padding: 15px;
+   background-color: white;
+}
+
+.card-title {
+   font-size: 19px;
+   font-weight: bold;
+   color: #002147;
+}
+
+.card-text {
+   font-size: 16px;
+   color: #5d5d5d;
+   font-weight: 400;
+   text-align: justify;
+   padding: 5px 0px 0px 0px;
+   /* max-width: 320px; */
+}
+
+.card-footer span {
+   font-size: 17px;
+   color: #555;
+   font-weight: 400;
+}
+
+.btn_viewDetails {
+   color: #002147 !important;
+   text-decoration: none !important;
+   font-weight: 600
+}
+
+.swiper-prev,
+.swiper-next {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 20px;
+   font-weight: bold;
+   color: white;
+   text-decoration: none;
+   cursor: pointer;
+   z-index: 1000;
+}
+
+.swiper-prev {
+   left: 25px;
+}
+
+.swiper-next {
+   right: 25px;
+}
+
+.swiper-prev:hover,
+.swiper-next:hover {
+   text-decoration: none;
+   color: #fdc800;
+}
+
+@keyframes zoomFadeIn {
+   from {
+      opacity: 0;
+      transform: scale(0.8);
+   }
+
+   to {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+/* Initially hide cards */
+.swiper-slide {
+   opacity: 0;
+   transform: scale(0.8);
+   transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+/* Apply animation only when class "animate" is added */
+.swiper-slide.animate {
+   animation: zoomFadeIn 1.2s ease-in-out forwards;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+   .section-title h1 {
+      font-size: 26px;
+   }
+
+
+   .section-title p {
+      font-size: 14px;
+   }
+
+   .card {
+      height: 440px !important;
+      width: 330px !important;
+   }
+
+   .card-img-top {
+      height: 220px;
+   }
+
+   .card-title {
+      font-size: 17px;
+   }
+
+   .card-text {
+      font-size: 14px;
+   }
+
+
+   .swiper-prev,
+   .swiper-next {
+
+      font-size: 16px;
+   }
+
+
+   .swiper-prev {
+      left: 20px;
+   }
+
+   .swiper-next {
+      right: 20px;
+   }
+
+
+   .swiper-slide {
+      display: flex;
+      justify-content: center;
+      /* Ensures cards are centered */
+      padding-left: 57px;
+      width: 80%;
+   }
+
+}
+
+/* Department end*/
+
+/* video start */
+
+.video-area {
+   position: relative;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+.video-wrapper {
+   width: 100%;
+   height: 100%;
+}
+
+.video-fluid {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   /* Ensures it covers the full screen */
+}
+
+/* video end */
+
+
+/*************************************************** login page start here *********************************/
+
+
+/* 1.Alternatively, you can target all labels in your form: */
+.form-label {
+   font-weight: 600;
+   /* Adjust as needed */
+   font-size: 16px;
+   color: #000;
+   padding-bottom: 0px;
+   margin-top: 12px;
+}
+
+/* 2. Card Wrapper: fixed max-width to control size */
+.login-card {
+   max-width: 800px;
+   /* Adjust to match your desired width */
+   width: 100%;
+   margin: 40px auto;
+   /* This sets 40px top and bottom margin, auto left/right */
+}
+
+/* 3. Image Takes Full Column Height */
+.full-height {
+   height: 100%;
+   object-fit: cover;
+   /* Crop the image nicely */
+}
+/* 4. Logo Styling */
+.logo-img {
+   max-width: 120px;
+   /* Adjust as needed */
+   height: auto;
+   display: block;
+   margin: 0px auto;
+
+}
+#headinglbl{
+   padding: 0px;
+   margin: 0px;
+   text-align: center;
+}
+
+/* 5. Error Message Styling */
+.error-msg {
+   color: red;
+   font-size: 14px;
+   margin-top: 4px;
+   display: block;
+}
+
+/* 6. Box Shadow (optional) */
+.shadow-lg {
+   box-shadow: 0px 4px 15px rgba(89, 89, 95, 0.2) !important;
+}
+
+/* 7. Responsive Tweaks */
+@media (max-width: 768px) {
+   .login-card {
+      width: 90% !important;
+      /* narrower on mobile */
+   }
+
+   #hideimg {  
+      display: none !important; /* Hide the image column on small screens */
+   }
+}
+
+/* 8. login button color */
+.custom-login-btn {
+   background-color: #002147;
+   /* Your desired color */
+   border-color: #002147;
+   /* Matching border color */
+   margin-bottom: 4px !important;
+}
+
+/* Optionally, add hover styles */
+.custom-login-btn:hover {
+   background-color: #FFC107;
+   border-color: #FFC107;
+}
+#forgetpasstxt{
+   color: #0a1a2c;
+   font-weight: 500;
+}
+
+
+/******************************************** Custom Css For  of forget password Model *******************************/
+
+  /* Modal Overlay */
+  .modal-overlay {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.4);
+   backdrop-filter: blur(3px);
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+   background: white;
+   padding: 20px;
+   border-radius: 10px;
+   width: 90%;
+   max-width: 400px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   text-align: center;
+   position: relative;
+}
+.forgotlbl{
+   color: black !important;
+}
+
+/* Close Button */
+.close-btn {
+   position: absolute;
+   top: 10px;
+   right: 15px;
+   font-size: 20px;
+   cursor: pointer;
+}
+
+/* Blur Effect */
+.blur {
+   filter: blur(2px);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+   .modal-content {
+       width: 90%;
+   }
+}
+#SendOtpBtn{
+   background-color: #002147;
+   /* Your desired color */
+   border-color: #002147;
+   /* Matching border color */
+   margin: top 8px !important;
+ 
+
+}
+
+/* css for verify otp and timer*/
+.otp-timer {
+   font-size: 16px;
+   font-weight: bold;
+   text-align: center;
+   color: #ff0000;
+   margin-bottom: 8px;
+}
+
+.resend-text {
+   text-align: center;
+   font-size: 14px;
+   margin-top: 0px !important;
+   color: #002147 !important;
+   text-decoration: none;
+}
+
+.otp-input-container {
+   display: flex;
+   justify-content: center;
+   gap: 8px;
+   margin-bottom: 15px;
+}
+
+.otp-input {
+   width: 40px;
+   height: 50px;
+   font-size: 24px;
+   text-align: center;
+   border: 2px solid #002147;
+   border-radius: 5px;
+   outline: none;
+   transition: border-color 0.3s;
+}
+
+.otp-input:focus {
+   border-color: #FFC107;
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+   .otp-input {
+       width: 35px;
+       height: 45px;
+       font-size: 20px;
+   }
+}
+
+/******************************** login page and model over here **********************************/
+
+/********************************* RESET PASSWORD PAGE START ***************************************/
+.reset-password-container {
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   background: url('../design_files/images/background.jpg') no-repeat center center / cover;
+
+}
+
+.reset-password-card {
+   display: flex;
+   max-width: 700px;
+   width: 100%;
+   background: white;
+   border-radius: 15px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   border-radius: 20px;
+}
+
+.lottie-container {
+   background: #f5f5f5;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex: 1;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+}
+
+.form-container {
+   flex: 1;
+   padding: 30px;
+}
+
+.resetlbl {
+   color: #000;
+   font-weight: bold;
+}
+
+.custom-input {
+   border-radius: 8px;
+   padding: 10px;
+   font-size: 16px;
+}
+
+.custom-btn {
+   padding: 12px;
+   font-size: 18px;
+   border-radius: 8px;
+   background-color: #002147;
+   border-color: #002147;
+}
+.custom-btn:hover{
+   background-color: #FFC107;
+   border-color: #FFC107;
+}
+
+/************************************* RESET PASSWORD PAGE OVER ***************************/
+
+/************************************* register page strat here ****************************/
+.btn-md {
+   padding: 0.5rem 1rem;
+   /* Adjust padding as desired */
+   font-size: 1rem;
+   /* Adjust font size */
+   border-radius: 0.25rem;
+   /* Optional: adjust border radius */
+}
+
+/* Lottie container inside card */
+.lottie-card-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   pointer-events: none;
+   /* Allow clicks to pass through */
+   opacity: 1;
+   /* Adjust for visibility */
+}
+
+/* Register card - same dimensions as login card */
+.register-card {
+   max-width: 800px;
+   width: 100%;
+   margin: 0 auto;
+   position: relative;
+   z-index: 2;
+   /* Ensure card is above Lottie */
+}
+
+/* Form Container (Above Lottie) */
+.form-container {
+   position: relative;
+   z-index: 2;
+   /* Above the Lottie animation */
+   background: rgba(255, 255, 255, 0.656);
+   /* Add slight opacity */
+   padding: 20px;
+   border-radius: 10px;
+}
+
+.form-control {
+   border: 2px solid #000;
+   /* Black border */
+   box-shadow: none;
+   /* Remove default shadow if desired */
+   font-weight: 500;
+   /* Slightly bolder text, adjust as needed */
+   color: black !important;
+   /* Ensures text color is black */
+}
+
+.form-control:focus {
+   border-color: #000000e0;
+   /* Keep black border on focus */
+   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+   /* optional focus ring */
+}
+
+
+/********************************************************* register page over here *************************/
+
+
+/********************************************************* principal message start here ********************/
+
+#Principal_img img {
+   width: 305px;
+   height: 420px;
+   object-fit: cover;
+   margin-left: 120px;
+}
+
+#Principal_msg p {
+   margin-bottom: -5px;
+}
+
+@media (max-width:768px) {
+   #Principal_img img {
+      width: 245px;
+      height: 350px;
+      object-fit: cover;
+      margin-left: 110px;
+   }
+}
+
+/************************************************** principal message end here ******************/
+
+
+/****************************************************** Vision - Mission start here *****************/
+
+
+.vision-mission-section {
+   color: white;
+   padding: 60px 0px;
+   font-family: 'Roboto' sans-serif;
+}
+
+.divider-vertical {
+   border-left: 3px solid #fdc800;
+   height: 100%;
+}
+
+.divider-horizontal {
+   border-top: 3px solid #fdc800;
+   width: 97%;
+   margin-left: 18px;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.vision-mission-section h2 {
+   color: #fdc800;
+   font-weight: 600;
+   font-size: 32px;
+}
+
+.vision-mission-section li {
+   font-size: 19px;
+   text-align: justify;
+   font-weight: 300;
+}
+
+#Vision_mission_container {
+   max-width: 1250px;
+}
+
+@media (max-width:768px) {
+   .vision-mission-section h2 {
+      font-size: 26px;
+      margin-left: 10px;
+   }
+
+   .vision-mission-section li {
+      font-size: 16px;
+
+   }
+
+   #Vision_mission_container {
+      margin-left: -10px;
+   }
+
+   .vision-mission-section {
+      padding: 50px 0px;
+   }
+}
+
+
+/************************************** Vision - Mission end here ****************************/
+
+
+/************************************* Latest News start here **********************************/
+
+
+#Latest_News_Container {
+   font-family: 'roboto' sans-serif;
+   max-width: 1250px;
+}
+
+#Latest_news_row {
+   padding-bottom: 40px;
+}
+
+#Latest_News_Container h2 {
+   color: #002147;
+   font-weight: 600;
+   font-size: 30px;
+}
+
+#Latest_News_P {
+   font-weight: 500;
+   font-size: 18px;
+   padding-bottom: 25px;
+   margin-top: -5px;
+}
+
+.news-card {
+   background: #ffffff;
+   border: 1.7px solid #ddd;
+   /* Light border to make it visible */
+   padding: 15px 15px 0px 20px;
+   transition: 0.3s;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+   border-radius: 8px;
+   /* Rounded corners for a modern look */
+}
+
+.news-card h6 {
+   font-weight: bold;
+   color: black;
+   font-size: 16px;
+   padding-bottom: 10px;
+}
+
+.news-card .date {
+   font-size: 14px;
+   color: #666;
+   font-weight: bold;
+}
+
+.news-card h5 {
+   font-weight: bold;
+   color: #000;
+   font-size: 15.5px;
+}
+
+.news-card p {
+   color: #666;
+   font-weight: 500;
+}
+
+.news-card a {
+   font-weight: bold;
+   text-decoration: none;
+   color: #000;
+   font-size: 16px;
+
+}
+
+.news-card a:hover {
+
+   color: #fdc800;
+
+}
+
+.view-more-btn {
+   background: #002147;
+   color: #fff;
+   font-size: 19px;
+   padding: 10px 30px;
+   border-radius: 24px;
+   text-decoration: none;
+   font-weight: 500;
+
+}
+
+.view-more-btn:hover {
+   background: #fdc800;
+   color: black;
+   text-decoration: none;
+
+}
+
+
+@media (max-width:768px) {
+
+   #Latest_news_row {
+      padding-left: 16px;
+      padding-right: 16px;
+   }
+
+   #Latest_News_Container h2 {
+      font-size: 26px;
+   }
+   
+   #Latest_News_P {
+      font-size: 15px;
+      
+   }
+
+   .view-more-btn {
+    
+      font-size: 17px;
+   
+   }
+
+   #Latest_news_row {
+      padding-bottom: 15px;
+   }
+
+}
+
+/***************************************************** Latest News end here *************************8/
