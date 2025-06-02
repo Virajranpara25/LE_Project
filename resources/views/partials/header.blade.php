@@ -1,5 +1,10 @@
 <html dir="ltr" lang="zxx">
 
+<head>
+<link href="design_files/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+</head>
+
 <body class=" transparent-header">
 
   <!-- scrollToTop -->

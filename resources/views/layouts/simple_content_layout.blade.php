@@ -93,6 +93,8 @@
     <script src="design_files/js/template.js"></script>
     <!-- Custom Scripts -->
     <script src="design_files/js/custom.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     @yield('js')

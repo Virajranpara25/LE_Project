@@ -5,8 +5,8 @@
   <?php $__env->startSection('css'); ?>
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
   <?php $__env->stopSection(); ?>
@@ -126,10 +126,10 @@
                 <img src="design_files/images/course_1.png" class="card-img-top" alt="Information Technology">
                 <div class="card-body">
                   <h5 class="card-title">Information Technology</h5>
-                  <p class="card-text">Focuses on using computers to store, process, and analyze data. Prepares students for careers in software development, networking, and cybersecurity.</p>
+                  <p class="card-text">Focuses on using computers to store and process data. Prepares students for careers in software development, networking, and cybersecurity.</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <span><i class="fa fa-user"></i> 35</span>
                   <a href="course_details.html" class="btn_viewDetails">View Details</a>
                 </div>
               </div>
@@ -143,7 +143,7 @@
                   <p class="card-text">Involves designing, analyzing, and manufacturing mechanical systems. Covers thermodynamics, robotics, and industrial automation.</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <span><i class="fa fa-user"></i> 35</span>
                   <a href="course_details.html" class="btn_viewDetails">View Details</a>
                 </div>
               </div>
@@ -157,7 +157,7 @@
                   <p class="card-text">Specializes in designing, constructing, and maintaining infrastructure. Includes bridges, buildings, roads, and water systems.</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <span><i class="fa fa-user"></i> 35</span>
                   <a href="course_details.html" class="btn_viewDetails">View Details</a>
                 </div>
               </div>
@@ -171,7 +171,7 @@
                   <p class="card-text">Studies the production and application of ceramic materials. Used in electronics, medical implants, and advanced construction.</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <span><i class="fa fa-user"></i> 35</span>
                   <a href="course_details.html" class="btn_viewDetails">View Details</a>
                 </div>
               </div>
@@ -185,7 +185,7 @@
                   <p class="card-text">Integrates computing and telecommunication to manage digital information. Covers networking, cloud computing, and cybersecurity.</p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                  <span><i class="bi bi-person-fill"></i> 35</span>
+                  <span><i class="fa fa-user"></i> 35</span>
                   <a href="course_details.html" class="btn_viewDetails">View Details</a>
                 </div>
               </div>
@@ -255,6 +255,76 @@
 
   <!-- Principal's Message end -->
 
+  
+  <!--quick access section start -->
+  <!-- ================ -->
+  <section class="section clearfix">
+    <div class="container-fluid">
+      <div class="row justify-content-lg-center">
+        <div class="col-lg-12">
+
+
+          <div class="navbarone">
+            <a href="#">Bonafide Portal</a>
+            <a href="#">Scholarship News</a>
+            <a href="#">Online Fees Portal</a>
+            <a href="#">Hostel News &amp; Forms</a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!--quick access section end -->
+
+  
+    <!-- counter section start -->
+
+      <!-- ================ -->
+
+
+
+<section class="pv-40 stats padding-bottom" style="padding-bottom: 70px;">
+  <div class="container" id="Counter_area">
+    <div class="row">
+      <!-- Student Counter -->
+      <div class="col-lg-4 col-12 text-center">
+        <div class="item-box">
+          <span class="icon circle"><i class="fas fa-user-graduate"></i></span>
+          <h3><strong>Students</strong></h3>
+          <span class="counter" data-to="2000" data-speed="5000">0</span>
+        </div>
+      </div>
+      
+      <!-- Department Counter -->
+      <div class="col-lg-4 col-12 text-center">
+        <div class="item-box">
+          <span class="icon circle"><i class="fas fa-university"></i></span>
+          <h3><strong>Departments</strong></h3>
+          <span class="counter" data-to="10" data-speed="5000">0</span>
+        </div>
+      </div>
+      
+      <!-- Faculty Counter -->
+      <div class="col-lg-4 col-12 text-center">
+        <div class="item-box">
+          <span class="icon circle"><i class="fas fa-chalkboard-teacher"></i></span>
+          <h3><strong>Faculty</strong></h3>
+          <span class="counter" data-to="150" data-speed="5000">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- counter section end -->
+
+
+
+
+
   <!-- Vision-Mission Start -->
 
   <div class="container-fluid vision-mission-section" style="background-image: url('design_files/images/Background.png');">
@@ -295,28 +365,8 @@
 
 
 
-  <!--quick access section start -->
-  <!-- ================ -->
-  <!-- <section class="section clearfix">
-    <div class="container-fluid">
-      <div class="row justify-content-lg-center">
-        <div class="col-lg-12">
 
 
-          <div class="navbarone">
-            <a href="#">Bonafide Portal</a>
-            <a href="#">Scholarship News</a>
-            <a href="#">Online Fees Portal</a>
-            <a href="#">Hostel News &amp; Forms</a>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-
-  </section> -->
-  <!--quick access section end -->
 
   <!--Latest news section start -->
 

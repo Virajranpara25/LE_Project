@@ -15,10 +15,30 @@
 
         <!-- Right Side: Login Form -->
         <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-            <div class="text-center mb-4">
+            <div class="text-center mb-3">
                 <img src="design_files/images/logo.png" alt="LE College" class="logo-img">
             </div>
             <h3 id="headinglbl">Welcome Login Here </h3>
+
+            <?php if(session('success')): ?>
+            <div id="formErrorAlert" class="alert alert-success alert-dismissible  show d-flex align-items-center" role="alert" style="border-radius: 5px;font-size: 16px; font-weight: bold;margin-bottom: -10px;">
+                <?php echo e(session('success')); ?>
+
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+            </div>
+            <?php endif; ?>
+
+            <div id="customErrorContainer">
+            <?php if(session('error')): ?>
+            <div id="formErrorAlert" class="alert alert-danger alert-dismissible show d-flex align-items-center" role="alert" style="border-radius: 5px; font-size: 16px; font-weight: bold;margin-bottom: -10px;">
+                <?php echo e(session('error')); ?>
+
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+            </div>
+            <?php endif; ?>
+            </div>
+
+
 
             <form action="<?php echo e(route('login')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
@@ -26,21 +46,21 @@
                 <!-- Dropdown for User Role -->
                 <div class="mb-3">
                     <label class="form-label" for="user_role">Select Role</label>
-                    <select id="user_role" name="user_role" class="form-control form-control-lg" required>
-                        <option value="">-- Select Role --</option>
+                    <select id="user_role" name="user_role" class="form-control form-control-lg">
+                            <option value="">-- Select Role --</option>
                         <option value="hod" <?php echo e(old('user_role') == 'hod' ? 'selected' : ''); ?>>HOD</option>
                         <option value="student" <?php echo e(old('user_role') == 'student' ? 'selected' : ''); ?>>STUDENT</option>
                         <option value="faculty" <?php echo e(old('user_role') == 'faculty' ? 'selected' : ''); ?>>FACULTY</option>
                         <option value="admin" <?php echo e(old('user_role') == 'admin' ? 'selected' : ''); ?>>ADMIN</option>
                     </select>
-                    <span class="error-msg"><?php $__errorArgs = ['user_role'];
+                    <?php $__errorArgs = ['user_role'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <?php echo e($message); ?> <?php unset($message);
+$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?></span>
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <!-- Enrollment Number Field -->
@@ -48,36 +68,38 @@ unset($__errorArgs, $__bag); ?></span>
                     <label class="form-label" for="enrollment_number">Enrollment Number</label>
                     <input type="text" id="enrollment_number" name="enrollment_number"
                         class="form-control form-control-lg"
-                        value="<?php echo e(old('enrollment_number')); ?>" required />
-                    <span class="error-msg"><?php $__errorArgs = ['enrollment_number'];
+                        value="<?php echo e(old('enrollment_number')); ?>" />
+                        <?php $__errorArgs = ['enrollment_number'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <?php echo e($message); ?> <?php unset($message);
+$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?></span>
+unset($__errorArgs, $__bag); ?>
+
                 </div>
 
                 <!-- Password Field -->
                 <div class="mb-3">
                     <label class="form-label" for="password">Password</label>
                     <input type="password" id="password" name="password"
-                        class="form-control form-control-lg" required />
-                    <span class="error-msg"><?php $__errorArgs = ['password'];
+                        class="form-control form-control-lg" />
+                        <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <?php echo e($message); ?> <?php unset($message);
+$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?></span>
+unset($__errorArgs, $__bag); ?>
+
                 </div>
 
-                <button class="btn btn-dark btn-lg w-100 custom-login-btn" type="submit">Login</button>
+                <button class="btn mt-4 btn-dark btn-lg w-100 custom-login-btn" type="submit">Login</button>
 
                 <div class="text-center mt-3">
-                    <a href="javascript:void(0);" id="forgetpasstxt" onclick="openForgotPasswordModal()">Forgot password?</a>
+                    <a href="javascript:void(0);" id="forgetpasstxt" onclick="checkUserRoleBeforeForgot()">Forgot password?</a>
                 </div>
 
             </form>
@@ -85,6 +107,23 @@ unset($__errorArgs, $__bag); ?></span>
     </div>
 </div>
 
+<script>
+     function checkUserRoleBeforeForgot() {
+        const userRole = document.getElementById('user_role').value;
+
+        if (!userRole) {
+            const errorContainer = document.getElementById('customErrorContainer');
+        errorContainer.innerHTML = `
+            <div id="formErrorAlert" class="alert alert-danger alert-dismissible show d-flex align-items-center" role="alert" style="border-radius: 5px; font-size: 16px; font-weight: bold;margin-bottom: -10px;">
+                Please select a user role before proceeding.
+            </div>
+        `;
+        return;
+        } else {
+            openForgotPasswordModal(); // This opens your forgot password popup
+        }
+    }
+</script>
 
 
 
@@ -96,15 +135,24 @@ unset($__errorArgs, $__bag); ?></span>
         <h4 class="form-label">Forgot Password</h4>
         <p style="font-weight: 500;">Enter your email address, and we’ll send you a OTP for verification.</p>
 
-        <form id="resetPasswordForm">
-
+        <form id="resetPasswordForm" action="<?php echo e(route('send_otp')); ?>" method="POST">
+        <?php echo csrf_field(); ?>
             <div class="input-group mb-3">
-                <input type="email" id="resetEmail" name="email" class="form-control" placeholder="Enter your email" required>
+                <input type="email" id="resetEmail" name="email" class="form-control" placeholder="Enter your email">
+                <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+
             </div>
             <button type="button" class="btn btn-primary w-100 " id="SendOtpBtn" onclick="sendOtp()">Send OTP</button>
 
             </form>
-        </div>
+        </div>  
     </div>
 
 <!-- OTP Verification Modal -->
@@ -138,13 +186,24 @@ unset($__errorArgs, $__bag); ?></span>
 </div>
 
 
-<script>
-    var csrfToken = "<?php echo e(csrf_token()); ?>";
-    var sendOtpRoute = "<?php echo e(route('send.otp')); ?>";
-    var verifyOtpRoute = "<?php echo e(route('verify.otp')); ?>";
-    var resetPassRoute = "<?php echo e(route('resetpass')); ?>";
-</script>
+
 <script src="<?php echo e(asset('design_files/js/custom.js')); ?>"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fields = document.querySelectorAll('#user_role, #enrollment_number, #password');
+
+    fields.forEach(field => {
+        field.addEventListener('input', function () {
+            const errorAlert = document.getElementById('formErrorAlert');
+            if (errorAlert) {
+                errorAlert.remove(); // or errorAlert.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
 
 
 <?php $__env->stopSection(); ?>

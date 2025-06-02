@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
+
 //------------------------------------ introduction start --------------------------
 // Create an intersection observer to trigger the animation
 const observer = new IntersectionObserver((entries, observer) => {

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentRegistration_Controller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
@@ -16,35 +17,11 @@ Route::get('/login', function () {
     return view('Login_Registers.login');
 })->name('login');
 
-
-Route::get('/register', function () {
-    return view('Login_Registers.Register');
-})->name('register');
-
+Route::post('/login',[StudentRegistration_Controller::class, 'login'])->name('login');
 
 //Create a New Laravel Route to Send OTP
-Route::post('/send-otp', function (Request $request) {
-    $request->validate(['email' => 'required|email']);
+Route::post('/send_otp', [StudentRegistration_Controller::class,'verify_email'])->name('send_otp');
 
-    $user = User::where('email', $request->email)->first();
-
-    if (!$user) {
-        return response()->json(['success' => false, 'message' => 'User not found!']);
-    }
-
-    $otp = rand(100000, 999999); // Generate a 6-digit OTP
-
-    // Store OTP temporarily for verification (5 minutes)
-    Cache::put('otp_' . $user->email, $otp, now()->addMinutes(5));
-
-    // Send OTP via email
-    Mail::raw("Your OTP for password reset is: $otp", function ($message) use ($user) {
-        $message->to($user->email)
-                ->subject('Password Reset OTP');
-    });
-
-    return response()->json(['success' => true, 'message' => 'OTP sent successfully!']);
-})->name('send.otp');
 
 
 
@@ -94,3 +71,12 @@ Route::post('/reset-password', function (Request $request) {
 
     return redirect()->route('login')->with('success', 'Password reset successful. Please log in.');
 })->name('password.update');
+
+//for student registration
+Route::get('/register', function () {
+    return view('Login_Registers.Register');
+})->name('register');
+
+Route::post('/register',[StudentRegistration_Controller::class, 'student_registration'])->name('student_registration');    
+
+

@@ -17,10 +17,28 @@
 
         <!-- Right Side: Login Form -->
         <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-            <div class="text-center mb-4">
+            <div class="text-center mb-3">
                 <img src="design_files/images/logo.png" alt="LE College" class="logo-img">
             </div>
             <h3 id="headinglbl">Welcome Login Here </h3>
+
+            @if(session('success'))
+            <div id="formErrorAlert" class="alert alert-success alert-dismissible  show d-flex align-items-center" role="alert" style="border-radius: 5px;font-size: 16px; font-weight: bold;margin-bottom: -10px;">
+                {{ session('success') }}
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+            </div>
+            @endif
+
+            <div id="customErrorContainer">
+            @if(session('error'))
+            <div id="formErrorAlert" class="alert alert-danger alert-dismissible show d-flex align-items-center" role="alert" style="border-radius: 5px; font-size: 16px; font-weight: bold;margin-bottom: -10px;">
+                {{ session('error') }}
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+            </div>
+            @endif
+            </div>
+
+
 
             <form action="{{ route('login') }}" method="POST">
                 @csrf
@@ -28,14 +46,14 @@
                 <!-- Dropdown for User Role -->
                 <div class="mb-3">
                     <label class="form-label" for="user_role">Select Role</label>
-                    <select id="user_role" name="user_role" class="form-control form-control-lg" required>
-                        <option value="">-- Select Role --</option>
+                    <select id="user_role" name="user_role" class="form-control form-control-lg">
+                            <option value="">-- Select Role --</option>
                         <option value="hod" {{ old('user_role') == 'hod' ? 'selected' : '' }}>HOD</option>
                         <option value="student" {{ old('user_role') == 'student' ? 'selected' : '' }}>STUDENT</option>
                         <option value="faculty" {{ old('user_role') == 'faculty' ? 'selected' : '' }}>FACULTY</option>
                         <option value="admin" {{ old('user_role') == 'admin' ? 'selected' : '' }}>ADMIN</option>
                     </select>
-                    <span class="error-msg">@error('user_role') {{ $message }} @enderror</span>
+                    @error('user_role') <div class="text-danger">{{ $message }}</div> @enderror
                 </div>
 
                 <!-- Enrollment Number Field -->
@@ -43,22 +61,24 @@
                     <label class="form-label" for="enrollment_number">Enrollment Number</label>
                     <input type="text" id="enrollment_number" name="enrollment_number"
                         class="form-control form-control-lg"
-                        value="{{ old('enrollment_number') }}" required />
-                    <span class="error-msg">@error('enrollment_number') {{ $message }} @enderror</span>
+                        value="{{ old('enrollment_number') }}" />
+                        @error('enrollment_number') <div class="text-danger">{{ $message }}</div> @enderror
+
                 </div>
 
                 <!-- Password Field -->
                 <div class="mb-3">
                     <label class="form-label" for="password">Password</label>
                     <input type="password" id="password" name="password"
-                        class="form-control form-control-lg" required />
-                    <span class="error-msg">@error('password') {{ $message }} @enderror</span>
+                        class="form-control form-control-lg" />
+                        @error('password') <div class="text-danger">{{ $message }}</div> @enderror
+
                 </div>
 
-                <button class="btn btn-dark btn-lg w-100 custom-login-btn" type="submit">Login</button>
+                <button class="btn mt-4 btn-dark btn-lg w-100 custom-login-btn" type="submit">Login</button>
 
                 <div class="text-center mt-3">
-                    <a href="javascript:void(0);" id="forgetpasstxt" onclick="openForgotPasswordModal()">Forgot password?</a>
+                    <a href="javascript:void(0);" id="forgetpasstxt" onclick="checkUserRoleBeforeForgot()">Forgot password?</a>
                 </div>
 
             </form>
@@ -66,6 +86,23 @@
     </div>
 </div>
 
+<script>
+     function checkUserRoleBeforeForgot() {
+        const userRole = document.getElementById('user_role').value;
+
+        if (!userRole) {
+            const errorContainer = document.getElementById('customErrorContainer');
+        errorContainer.innerHTML = `
+            <div id="formErrorAlert" class="alert alert-danger alert-dismissible show d-flex align-items-center" role="alert" style="border-radius: 5px; font-size: 16px; font-weight: bold;margin-bottom: -10px;">
+                Please select a user role before proceeding.
+            </div>
+        `;
+        return;
+        } else {
+            openForgotPasswordModal(); // This opens your forgot password popup
+        }
+    }
+</script>
 
 
 
@@ -77,15 +114,17 @@
         <h4 class="form-label">Forgot Password</h4>
         <p style="font-weight: 500;">Enter your email address, and we’ll send you a OTP for verification.</p>
 
-        <form id="resetPasswordForm">
-
+        <form id="resetPasswordForm" action="{{ route('send_otp') }}" method="POST">
+        @csrf
             <div class="input-group mb-3">
-                <input type="email" id="resetEmail" name="email" class="form-control" placeholder="Enter your email" required>
+                <input type="email" id="resetEmail" name="email" class="form-control" placeholder="Enter your email">
+                @error('email') <div class="text-danger">{{ $message }}</div> @enderror
+
             </div>
             <button type="button" class="btn btn-primary w-100 " id="SendOtpBtn" onclick="sendOtp()">Send OTP</button>
 
             </form>
-        </div>
+        </div>  
     </div>
 
 <!-- OTP Verification Modal -->
@@ -119,13 +158,24 @@
 </div>
 
 
-<script>
-    var csrfToken = "{{ csrf_token() }}";
-    var sendOtpRoute = "{{ route('send.otp') }}";
-    var verifyOtpRoute = "{{ route('verify.otp') }}";
-    var resetPassRoute = "{{ route('resetpass') }}";
-</script>
+
 <script src="{{ asset('design_files/js/custom.js') }}"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fields = document.querySelectorAll('#user_role, #enrollment_number, #password');
+
+    fields.forEach(field => {
+        field.addEventListener('input', function () {
+            const errorAlert = document.getElementById('formErrorAlert');
+            if (errorAlert) {
+                errorAlert.remove(); // or errorAlert.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
 
 
 @endsection
