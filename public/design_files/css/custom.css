@@ -1690,3 +1690,10 @@
   }
 
 /************************************* Counter section end here***************************/
+
+
+
+/* for student and faculty registratio  */
+.auto-hide-alert {
+    transition: opacity 0.5s ease;
+}

@@ -197,3 +197,19 @@ function resendOtp() {
     alert("Resending OTP...");
     sendOtp();
 }
+
+
+// meassage disapper after 5 second of register form
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const alertBoxes = document.querySelectorAll(".auto-hide-alert");
+        alertBoxes.forEach(alertBox => {
+            setTimeout(() => {
+                alertBox.style.transition = "opacity 0.5s ease";
+                alertBox.style.opacity = 0;
+                setTimeout(() => {
+                    alertBox.remove();
+                }, 500);
+            }, 5000);
+        });
+    });

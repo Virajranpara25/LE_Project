@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
+    <title><?php echo $__env->yieldContent('title'); ?></title>
     <meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
     <meta name="author" content="author">
 
@@ -52,20 +52,20 @@
     <link href="design_files/css/custom.css" rel="stylesheet">
 
     <!-- custom javascript file -->
-    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="<?php echo e(asset('js/custom.js')); ?>"></script>
 
 
     <!-- Font Awesome link for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
   
-    @yield('css')
+    <?php echo $__env->yieldContent('css'); ?>
 </head>
 
 <body style="background-image: url(design_files/images/Background.png);">
 
     <div class="content">
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
     </div>
  
     <!-- Put the Lottie script before the closing body tag -->
@@ -75,7 +75,7 @@
     <!-- JavaScript files placed at the end of the document so the pages load faster -->
     <!-- ================================================== -->
     <!-- Jquery and Bootstap core js files -->
-    <!-- <script src="{{ asset('plugins/jquery.min.js') }}"></script> -->
+    <!-- <script src="<?php echo e(asset('plugins/jquery.min.js')); ?>"></script> -->
     <script src="design_files/plugins/jquery.min.js"></script>
     <script src="design_files/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery Revolution Slider  -->
@@ -101,10 +101,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    @yield('js')
+    <?php echo $__env->yieldContent('js'); ?>
 
 
     <!--  -->
 </body>
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\LE_Project_Clg\resources\views/layouts/simple_content_layout.blade.php ENDPATH**/ ?>

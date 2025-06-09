@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FacultyRegistration_Controller;
 use App\Http\Controllers\StudentRegistration_Controller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
@@ -73,10 +74,18 @@ Route::post('/reset-password', function (Request $request) {
 })->name('password.update');
 
 //for student registration
-Route::get('/register', function () {
-    return view('Login_Registers.Register');
-})->name('register');
+Route::get('/student_register', function () {
+    return view('Login_Registers.student_register');
+})->name('student_register');
 
-Route::post('/register',[StudentRegistration_Controller::class, 'student_registration'])->name('student_registration');    
+Route::post('/student_register',[StudentRegistration_Controller::class, 'student_registration'])->name('student_registration');    
 
+
+
+//for faculty registration
+Route::get('/faculty_register', function () {
+    return view('Login_Registers.Faculty_Register');
+})->name('faculty_register');
+
+Route::post('/faculty_register',[FacultyRegistration_Controller::class, 'faculty_registration'])->name('faculty_register');    
 
