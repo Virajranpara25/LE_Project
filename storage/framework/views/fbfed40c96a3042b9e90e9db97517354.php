@@ -7,12 +7,13 @@
     <title><?php echo $__env->yieldContent('title'); ?></title>
     <meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template">
     <meta name="author" content="author">
-
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <!-- Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico">
+
 
     <!-- Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -50,6 +51,10 @@
 
     <!-- Custom css -->
     <link href="design_files/css/custom.css" rel="stylesheet">
+
+    <!-- custom javascript file -->
+    <script src="<?php echo e(asset('js/custom.js')); ?>"></script>
+
 
     <!-- Font Awesome link for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">

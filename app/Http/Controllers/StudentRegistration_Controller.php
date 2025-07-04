@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Branch_Data;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Student_Data;
 
@@ -11,6 +11,12 @@ class StudentRegistration_Controller extends Controller
 {
     public function student_registration(Request $request)  
     {
+         if ($request->isMethod("get")) 
+        {
+            $branches = Branch_Data::all();  // Fetch all branches
+            return view('Login_Registers.student_register', compact('branches'));
+        }
+
         if ($request->isMethod("post")) {
             // dd($request->all());
             $validated = $request->validate([
@@ -91,55 +97,5 @@ class StudentRegistration_Controller extends Controller
     }
 
 
-    public function login(Request $request)  
-    {
-        if ($request->isMethod("post")) {
-            $validated = $request->validate([
-                'user_role' => 'required',
-                'enrollment_number' => 'required|digits:12',
-                'password' => 'required',
-            ]);
-    
-            if ($validated['user_role'] == 'student') {
-                $student = Student_Data::where('Stu_Enrollment_NO', $validated['enrollment_number'])->first();
-    
-                if ($student && Hash::check($validated['password'], $student->Stu_password)) {
-                    // ✅ Credentials are valid
-                    session(['student' => $student]); // store in session
-                    return redirect()->route('index')->with('success', 'Login successful!');
-                } else {
-                    // ❌ Invalid credentials
-                    return back()->with('error', 'Invalid enrollment number or password.');
-                }
-            }
-    
-            // 👉 You can add more roles like 'admin', 'teacher', etc. here
-            return back()->with('error', 'Invalid user role.');
-        }
-    }
 
-
-    public function verify_email(Request $request)  
-    {
-        if ($request->isMethod("post")) {
-            $validated = $request->validate([
-                'email' => 'required|email',
-            ]);
-    
-            // Check if the email exists in the database
-            $student = Student_Data::where('Stu_emailid', $validated['email'])->first();
-    
-            if ($student) {
-                // Email exists, send OTP
-                // Generate OTP and send it to the email
-                // You can use Laravel's Mail facade to send the OTP
-                // For example:
-                // Mail::to($validated['email'])->send(new SendOtpMail($otp));
-    
-                return response()->json(['success' => true, 'message' => 'OTP sent to your email.']);
-            } else {
-                return response()->json(['success' => false, 'message' => 'Email not found.']);
-            }
-        }
-    }
 }

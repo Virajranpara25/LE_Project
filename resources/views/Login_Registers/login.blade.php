@@ -48,21 +48,21 @@
                     <label class="form-label" for="user_role">Select Role</label>
                     <select id="user_role" name="user_role" class="form-control form-control-lg">
                             <option value="">-- Select Role --</option>
+                            <option value="student" {{ old('user_role') == 'student' ? 'selected' : '' }}>STUDENT</option>
+                            <option value="principal" {{ old('user_role') == 'principal' ? 'selected' : '' }}>PRINCIPAL</option>
                         <option value="hod" {{ old('user_role') == 'hod' ? 'selected' : '' }}>HOD</option>
-                        <option value="student" {{ old('user_role') == 'student' ? 'selected' : '' }}>STUDENT</option>
                         <option value="faculty" {{ old('user_role') == 'faculty' ? 'selected' : '' }}>FACULTY</option>
-                        <option value="admin" {{ old('user_role') == 'admin' ? 'selected' : '' }}>ADMIN</option>
                     </select>
                     @error('user_role') <div class="text-danger">{{ $message }}</div> @enderror
                 </div>
 
                 <!-- Enrollment Number Field -->
                 <div class="mb-3">
-                    <label class="form-label" for="enrollment_number">Enrollment Number</label>
-                    <input type="text" id="enrollment_number" name="enrollment_number"
+                    <label class="form-label" for="username">Enrollment Number or UserName</label>
+                    <input type="text" id="username" name="username"
                         class="form-control form-control-lg"
-                        value="{{ old('enrollment_number') }}" />
-                        @error('enrollment_number') <div class="text-danger">{{ $message }}</div> @enderror
+                        value="{{ old('username') }}" />
+                        @error('username') <div class="text-danger">{{ $message }}</div> @enderror
 
                 </div>
 
@@ -121,7 +121,7 @@
                 @error('email') <div class="text-danger">{{ $message }}</div> @enderror
 
             </div>
-            <button type="button" class="btn btn-primary w-100 " id="SendOtpBtn" onclick="sendOtp()">Send OTP</button>
+            <button type="submit" class="btn btn-primary w-100 " id="SendOtpBtn">Send OTP</button>
 
             </form>
         </div>  
@@ -159,9 +159,12 @@
 
 
 
-<script src="{{ asset('design_files/js/custom.js') }}"></script>
+<script type="text/javascript" src="design_files/js/custom.js"></script>
 
-
+<script>
+    const sendOtpRoute = "{{ route('send_otp') }}";
+    const csrfToken = "{{ csrf_token() }}";
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const fields = document.querySelectorAll('#user_role, #enrollment_number, #password');

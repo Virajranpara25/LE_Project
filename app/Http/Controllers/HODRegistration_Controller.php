@@ -2,26 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Faculty_Data;
 use App\Models\Branch_Data;
+use Illuminate\Http\Request;
+use App\Models\HOD_Data;
 use Illuminate\Support\Facades\Hash;
 
 
-class FacultyRegistration_Controller extends Controller
+class HODRegistration_Controller extends Controller
 {
-    public function faculty_registration(Request $request)
+    public function HOD_registration(Request $request)
     {
-        if ($request->isMethod("get")) {
+        if ($request->isMethod("get")) 
+        {
             $branches = Branch_Data::all();  // Fetch all branches
-            return view('Login_Registers.faculty_register', compact('branches'));
+            return view('Login_Registers.HOD_register', compact('branches'));
         }
 
         if ($request->isMethod("post")) {
             $validated = $request->validate([
-                'faculty_id' => 'required|unique:faculty_details,F_id',
+                'HOD_id' => 'required|unique:hod_details,HOD_id',
                 'name' => 'required|regex:/^[a-zA-Z\s]+$/u',
-                'email' => 'required|email|unique:faculty_details,F_emailid',
+                'email' => 'required|email|unique:hod_details,HOD_emailid',
                 'branch' => 'required',
                 'gender' => 'required',
                 'phone_no' => 'required|digits:10',
@@ -57,25 +58,26 @@ class FacultyRegistration_Controller extends Controller
                 $request->file('profile_image')->move(public_path('profile_image'), $filename);
             }
 
+            echo "hod_id: " . $validated['HOD_id'];
             try {
-                Faculty_Data::create([
-                    'F_id' => $validated['faculty_id'],
-                    'F_name' => $validated['name'],
-                    'F_emailid' => $validated['email'],
+                HOD_Data::create([
+                    'HOD_id' => $validated['HOD_id'],
+                    'HOD_name' => $validated['name'],
+                    'HOD_emailid' => $validated['email'],
+                    'HOD_gender' => $validated['gender'],
+                    'HOD_Password' => Hash::make($validated['password']),
+                    'HOD_state' => $validated['state'],
+                    'HOD_City' => $validated['city'],
+                    'HOD_mobile_no' => $validated['phone_no'],
+                    'HOD_address1' => $validated['current_address'],
+                    'HOD_address2' => $validated['permanent_address'],
+                    'HOD_img' => $filename,
                     'Br_id' => $validated['branch'],
-                    'F_gender' => $validated['gender'],
-                    'F_state' => $validated['state'],
-                    'F_city' => $validated['city'],
-                    'F_mobile_no' => $validated['phone_no'],
-                    'F_password' => Hash::make($validated['password']),
-                    'F_address1' => $validated['current_address'],
-                    'F_address2' => $validated['permanent_address'],
-                    'F_image' => $filename,
                 ]);
 
-                return redirect()->back()->with('success', 'Faculty registered successfully.');
+                return redirect()->back()->with('success', 'HOD registered successfully.');
             } catch (\Exception $e) {
-                return back()->with('error', 'Failed to register faculty: ' . $e->getMessage());
+                return back()->with('error', 'Failed to register HOD: ' . $e->getMessage());
             }
         }
     }

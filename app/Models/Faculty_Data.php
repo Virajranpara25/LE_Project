@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Container\Attributes\Auth;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class FacultyRegister extends Model
+class Faculty_Data extends Authenticatable
 {
     protected $table = 'faculty_details';
 

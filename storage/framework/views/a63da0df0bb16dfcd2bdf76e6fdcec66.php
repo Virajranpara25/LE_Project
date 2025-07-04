@@ -45,13 +45,13 @@
 
                 <!-- Dropdown for User Role -->
                 <div class="mb-3">
-                    <label class="form-label" for="user_role">Select Role</label>
+                    <label class="form-label text-dark" for="user_role">Select Role</label>
                     <select id="user_role" name="user_role" class="form-control form-control-lg">
                             <option value="">-- Select Role --</option>
+                            <option value="student" <?php echo e(old('user_role') == 'student' ? 'selected' : ''); ?>>STUDENT</option>
+                            <option value="principal" <?php echo e(old('user_role') == 'principal' ? 'selected' : ''); ?>>PRINCIPAL</option>
                         <option value="hod" <?php echo e(old('user_role') == 'hod' ? 'selected' : ''); ?>>HOD</option>
-                        <option value="student" <?php echo e(old('user_role') == 'student' ? 'selected' : ''); ?>>STUDENT</option>
                         <option value="faculty" <?php echo e(old('user_role') == 'faculty' ? 'selected' : ''); ?>>FACULTY</option>
-                        <option value="admin" <?php echo e(old('user_role') == 'admin' ? 'selected' : ''); ?>>ADMIN</option>
                     </select>
                     <?php $__errorArgs = ['user_role'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -65,11 +65,11 @@ unset($__errorArgs, $__bag); ?>
 
                 <!-- Enrollment Number Field -->
                 <div class="mb-3">
-                    <label class="form-label" for="enrollment_number">Enrollment Number</label>
-                    <input type="text" id="enrollment_number" name="enrollment_number"
+                    <label class="form-label" for="username">Enrollment Number or UserName</label>
+                    <input type="text" id="username" name="username"
                         class="form-control form-control-lg"
-                        value="<?php echo e(old('enrollment_number')); ?>" />
-                        <?php $__errorArgs = ['enrollment_number'];
+                        value="<?php echo e(old('username')); ?>" />
+                        <?php $__errorArgs = ['username'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -149,7 +149,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
 
             </div>
-            <button type="button" class="btn btn-primary w-100 " id="SendOtpBtn" onclick="sendOtp()">Send OTP</button>
+            <button type="submit" class="btn btn-primary w-100 " id="SendOtpBtn">Send OTP</button>
 
             </form>
         </div>  
@@ -187,9 +187,12 @@ unset($__errorArgs, $__bag); ?>
 
 
 
-<script src="<?php echo e(asset('design_files/js/custom.js')); ?>"></script>
+<script type="text/javascript" src="design_files/js/custom.js"></script>
 
-
+<script>
+    const sendOtpRoute = "<?php echo e(route('send_otp')); ?>";
+    const csrfToken = "<?php echo e(csrf_token()); ?>";
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const fields = document.querySelectorAll('#user_role, #enrollment_number, #password');

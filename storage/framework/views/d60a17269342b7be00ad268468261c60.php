@@ -42,24 +42,22 @@
         <!-- Right Column: Form -->
         <div class="col-md-11 d-flex flex-column justify-content-center position-relative form-container py-3">
             <?php if(session('success')): ?>
-            <div class="alert alert-success alert-dismissible  show d-flex align-items-center" role="alert" style="border-radius: 5px;font-size: 16px; font-weight: bold;">
+            <div class="alert alert-success auto-hide-alert" style="border-radius: 5px; font-size: 16px; font-weight: bold;">
                 <?php echo e(session('success')); ?>
 
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
             </div>
             <?php endif; ?>
-
 
             <?php if(session('error')): ?>
-            <div class="alert alert-danger alert-dismissible show d-flex align-items-center" role="alert" style="border-radius: 5px; font-size: 16px; font-weight: bold;">
+            <div class="alert alert-danger auto-hide-alert" style="border-radius: 5px; font-size: 16px; font-weight: bold;">
                 <?php echo e(session('error')); ?>
 
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
             </div>
             <?php endif; ?>
 
+            
             <div class="form-wrapper mx-auto">
-                <form action="<?php echo e(route('student_registration')); ?>" method="POST" enctype="multipart/form-data">
+                <form action="<?php echo e(route('student_register')); ?>" method="POST" enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
 
                     <!-- Row 1 -->
@@ -175,19 +173,12 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="col-md-4 mb-2">
                             <label class="form-label" for="branch">Branch</label>
-                            <select id="branch" name="branch" class="form-control form-control-lg">
+                           <select id="branch" name="branch" class="form-control form-control-lg">
                                 <option value="">-- Select Branch --</option>
-                                <?php $__currentLoopData = [
-                                'Information Technology',
-                                'Electrical Engineering',
-                                'Mechanical Engineering',
-                                'Civil Engineering',
-                                'Chemical Engineering',
-                                'Metallurgy Engineering',
-                                'Information and Communication Technology',
-                                'Ceramic Engineering'
-                                ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $branch): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <option value="<?php echo e(45); ?>" <?php echo e(old('branch') == $branch ? 'selected' : ''); ?>><?php echo e($branch); ?></option>
+                                <?php $__currentLoopData = $branches; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $branch): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($branch->Br_id); ?>" <?php echo e(old('branch') == $branch->Br_id ? 'selected' : ''); ?>>
+                                    <?php echo e($branch->Br_name); ?> 
+                                </option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
                             <?php $__errorArgs = ['branch'];
@@ -298,4 +289,4 @@ unset($__errorArgs, $__bag); ?>
     </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.simple_content_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp\htdocs\LE_PROJECT_LARAVEL\LE_Project\resources\views/Login_Registers/Register.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.simple_content_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp\htdocs\LE_PROJECT_LARAVEL\LE_Project\resources\views/Login_Registers/student_register.blade.php ENDPATH**/ ?>

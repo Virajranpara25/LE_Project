@@ -78,32 +78,47 @@ function closeForgotPasswordModal() {
 }
 
 // Send OTP
-function sendOtp() {
-    let email = document.getElementById("resetEmail").value;
+document.getElementById("SendOtpBtn").addEventListener("click", function () {
+    const email = document.getElementById("resetEmail").value;
+    const userRole = window.selectedUserRole; // use global role
 
-    if (email.trim() === "") {
-        alert("Please enter your email.");
+    if (!email || !userRole) {
+        alert("Please enter email and select user role.");
         return;
     }
 
-    fetch(sendOtpRoute, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRF-TOKEN": csrfToken
-        },
-        body: JSON.stringify({ email: email })
+  fetch(sendOtpRoute, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "X-CSRF-TOKEN": csrfToken
+    },
+    body: JSON.stringify({
+        resetEmail: email,
+        user_role: userRole
     })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                openOtpModal();
-            } else {
-                alert(data.message);
-            }
-        })
-        .catch(error => console.error("Error:", error));
-}
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+    }
+    return response.json();
+})
+.then(data => {
+    if (data.success) {
+        alert(data.message);
+        openOtpModal();
+        startOtpTimer();
+    } else {
+        alert(data.message || "OTP failed.");
+    }
+})
+.catch(error => {
+    console.error("Error:", error);
+    alert("Error occurred while sending OTP.");
+});
+    
+});
 
 
 //--------------------------------------------- Open OTP Modal and Start Timer-------------------------
@@ -213,3 +228,14 @@ function resendOtp() {
             }, 5000);
         });
     });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const userRoleSelect = document.getElementById("user_role");
+        if (userRoleSelect) {
+            userRoleSelect.addEventListener("change", function () {
+                window.selectedUserRole = this.value;
+            });
+        }
+    });
+

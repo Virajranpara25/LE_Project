@@ -1,4 +1,6 @@
-<?php $__env->startSection('title', 'Register'); ?>
+
+
+<?php $__env->startSection('title', 'HOD Registration'); ?>
 
 <?php $__env->startSection('content'); ?>
 <div class="login-background_R d-flex justify-content-center align-items-center min-vh-100">
@@ -55,17 +57,18 @@
             </div>
             <?php endif; ?>
 
-            
+
+
             <div class="form-wrapper mx-auto">
-                <form action="<?php echo e(route('student_registration')); ?>" method="POST" enctype="multipart/form-data">
+                <form action="<?php echo e(route('HOD_register')); ?>" method="POST" enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
 
                     <!-- Row 1 -->
                     <div class="row">
                         <div class="col-md-4 mb-2">
-                            <label class="form-label" for="enroll_no">Enroll No</label>
-                            <input type="text" id="enroll_no" name="enroll_no" value="<?php echo e(old('enroll_no')); ?>" class="form-control form-control-lg">
-                            <?php $__errorArgs = ['enroll_no'];
+                            <label class="form-label" for="HOD_id">HOD ID</label>
+                            <input type="text" id="HOD_id" name="HOD_id" value="<?php echo e(old('HOD_id')); ?>" class="form-control form-control-lg">
+                            <?php $__errorArgs = ['HOD_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -75,7 +78,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="col-md-4 mb-2">
-                            <label class="form-label" for="name">Name</label>
+                            <label class="form-label" for="name">HOD Name</label>
                             <input type="text" id="name" name="name" value="<?php echo e(old('name')); ?>" class="form-control form-control-lg">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -145,79 +148,12 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
 
+
+
+
                     <!-- Row 3 -->
                     <div class="row">
-                        <div class="col-md-4 mb-2">
-                            <label class="form-label" for="mobile">Mobile No</label>
-                            <input type="text" id="mobile" name="mobile" value="<?php echo e(old('mobile')); ?>" class="form-control form-control-lg">
-                            <?php $__errorArgs = ['mobile'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <label class="form-label" for="parents_mobile">Parents Mobile No</label>
-                            <input type="text" id="parents_mobile" name="parents_mobile" value="<?php echo e(old('parents_mobile')); ?>" class="form-control form-control-lg">
-                            <?php $__errorArgs = ['parents_mobile'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <label class="form-label" for="branch">Branch</label>
-                            <select id="branch" name="branch" class="form-control form-control-lg">
-                                <option value="">-- Select Branch --</option>
-                                <?php $__currentLoopData = [
-                                'Information Technology',
-                                'Electrical Engineering',
-                                'Mechanical Engineering',
-                                'Civil Engineering',
-                                'Chemical Engineering',
-                                'Metallurgy Engineering',
-                                'Information and Communication Technology',
-                                'Ceramic Engineering'
-                                ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $branch): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <option value="<?php echo e(45); ?>" <?php echo e(old('branch') == $branch ? 'selected' : ''); ?>><?php echo e($branch); ?></option>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </select>
-                            <?php $__errorArgs = ['branch'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                        </div>
-                    </div>
 
-                    <!-- Row 4 -->
-                    <div class="row">
-                        <div class="col-md-4 mb-2">
-                            <label class="form-label" for="semester">Semester</label>
-                            <select id="semester" name="semester" class="form-control form-control-lg">
-                                <option value="">-- Select Semester --</option>
-                                <?php for($i = 1; $i <= 6; $i++): ?>
-                                    <option value="<?php echo e($i); ?>" <?php echo e(old('semester') == $i ? 'selected' : ''); ?>><?php echo e($i); ?></option>
-                                    <?php endfor; ?>
-                            </select>
-                            <?php $__errorArgs = ['semester'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                        </div>
                         <div class="col-md-4 mb-2">
                             <label class="form-label" for="city">City</label>
                             <input type="text" id="city" name="city" value="<?php echo e(old('city')); ?>" class="form-control form-control-lg">
@@ -230,6 +166,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
+
                         <div class="col-md-4 mb-2">
                             <label class="form-label" for="state">State</label>
                             <input type="text" id="state" name="state" value="<?php echo e(old('state')); ?>" class="form-control form-control-lg">
@@ -242,6 +179,63 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
+
+                        <div class="col-md-4 mb-2">
+                            <label class="form-label" for="mobile_no">Mobile No</label>
+                            <input type="text" id="phone_no" name="phone_no" value="<?php echo e(old('phone_no')); ?>" class="form-control form-control-lg">
+                            <?php $__errorArgs = ['phone_no'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Row 4 -->
+                    <div class="row">
+
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label" for="branch">Faculty Department</label>
+                            <select id="branch" name="branch" class="form-control form-control-lg">
+                                <option value="">-- Select Branch --</option>
+                                <?php $__currentLoopData = $branches; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $branch): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($branch->Br_id); ?>" <?php echo e(old('branch') == $branch->Br_id ? 'selected' : ''); ?>>
+                                    <?php echo e($branch->Br_name); ?> 
+                                </option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                            </select>
+                            <?php $__errorArgs = ['branch'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+
+
+
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label" for="profile_image">Profile Image</label>
+                            <input type="file" id="profile_image" name="profile_image" class="form-control form-control-lg" accept="image/*">
+                            <?php $__errorArgs = ['profile_image'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+
+
                     </div>
 
                     <!-- Row 5 -->
@@ -274,19 +268,8 @@ unset($__errorArgs, $__bag); ?>
 
                     <!-- Row 6 -->
                     <div class="row">
-                        <div class="col-md-6 mb-2">
-                            <label class="form-label" for="profile_image">Profile Image</label>
-                            <input type="file" id="profile_image" name="profile_image" class="form-control form-control-lg" accept="image/*">
-                            <?php $__errorArgs = ['profile_image'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> <div class="text-danger"><?php echo e($message); ?></div> <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                        </div>
-                        <div class="col-md-6 mb-2 d-flex align-items-end">
+
+                        <div class="col-md-12 mb-2 d-flex align-items-end">
                             <button class="btn btn-dark btn-lg w-100 custom-login-btn" type="submit">Register</button>
                         </div>
                     </div>
@@ -295,5 +278,6 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </div>
 </div>
+
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.simple_content_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\LE_Project_Clg\resources\views/Login_Registers/student_register.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.simple_content_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp\htdocs\LE_PROJECT_LARAVEL\LE_Project\resources\views/Login_Registers/HOD_register.blade.php ENDPATH**/ ?>

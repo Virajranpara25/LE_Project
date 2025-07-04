@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Student_Data extends Model
+class Student_Data extends Authenticatable
 {
     protected $table = 'student_details';
     public $timestamps = false; // Disable auto timestamps
@@ -17,3 +17,4 @@ class Student_Data extends Model
     ];
     
 }
+?>

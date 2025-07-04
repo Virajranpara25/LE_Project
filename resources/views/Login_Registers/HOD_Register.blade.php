@@ -1,6 +1,6 @@
 @extends('layouts.simple_content_layout')
 
-@section('title', 'Register')
+@section('title', 'HOD Registration')
 
 @section('content')
 <div class="login-background_R d-flex justify-content-center align-items-center min-vh-100">
@@ -54,20 +54,21 @@
             </div>
             @endif
 
-            
+
+
             <div class="form-wrapper mx-auto">
-                <form action="{{ route('student_register') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('HOD_register') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <!-- Row 1 -->
                     <div class="row">
                         <div class="col-md-4 mb-2">
-                            <label class="form-label" for="enroll_no">Enroll No</label>
-                            <input type="text" id="enroll_no" name="enroll_no" value="{{ old('enroll_no') }}" class="form-control form-control-lg">
-                            @error('enroll_no') <div class="text-danger">{{ $message }}</div> @enderror
+                            <label class="form-label" for="HOD_id">HOD ID</label>
+                            <input type="text" id="HOD_id" name="HOD_id" value="{{ old('HOD_id') }}" class="form-control form-control-lg">
+                            @error('HOD_id') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
                         <div class="col-md-4 mb-2">
-                            <label class="form-label" for="name">Name</label>
+                            <label class="form-label" for="name">HOD Name</label>
                             <input type="text" id="name" name="name" value="{{ old('name') }}" class="form-control form-control-lg">
                             @error('name') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
@@ -102,54 +103,59 @@
                         </div>
                     </div>
 
+
+
+
                     <!-- Row 3 -->
                     <div class="row">
+
                         <div class="col-md-4 mb-2">
-                            <label class="form-label" for="mobile">Mobile No</label>
-                            <input type="text" id="mobile" name="mobile" value="{{ old('mobile') }}" class="form-control form-control-lg">
-                            @error('mobile') <div class="text-danger">{{ $message }}</div> @enderror
+                            <label class="form-label" for="city">City</label>
+                            <input type="text" id="city" name="city" value="{{ old('city') }}" class="form-control form-control-lg">
+                            @error('city') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
+
                         <div class="col-md-4 mb-2">
-                            <label class="form-label" for="parents_mobile">Parents Mobile No</label>
-                            <input type="text" id="parents_mobile" name="parents_mobile" value="{{ old('parents_mobile') }}" class="form-control form-control-lg">
-                            @error('parents_mobile') <div class="text-danger">{{ $message }}</div> @enderror
+                            <label class="form-label" for="state">State</label>
+                            <input type="text" id="state" name="state" value="{{ old('state') }}" class="form-control form-control-lg">
+                            @error('state') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
+
                         <div class="col-md-4 mb-2">
-                            <label class="form-label" for="branch">Branch</label>
-                           <select id="branch" name="branch" class="form-control form-control-lg">
+                            <label class="form-label" for="mobile_no">Mobile No</label>
+                            <input type="text" id="phone_no" name="phone_no" value="{{ old('phone_no') }}" class="form-control form-control-lg">
+                            @error('phone_no') <div class="text-danger">{{ $message }}</div> @enderror
+                        </div>
+                    </div>
+
+
+
+                    <!-- Row 4 -->
+                    <div class="row">
+
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label" for="branch">Faculty Department</label>
+                            <select id="branch" name="branch" class="form-control form-control-lg">
                                 <option value="">-- Select Branch --</option>
                                 @foreach($branches as $branch)
                                 <option value="{{ $branch->Br_id }}" {{ old('branch') == $branch->Br_id ? 'selected' : '' }}>
                                     {{ $branch->Br_name }} {{-- Use correct column name from DB --}}
                                 </option>
                                 @endforeach
+
                             </select>
                             @error('branch') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
-                    </div>
 
-                    <!-- Row 4 -->
-                    <div class="row">
-                        <div class="col-md-4 mb-2">
-                            <label class="form-label" for="semester">Semester</label>
-                            <select id="semester" name="semester" class="form-control form-control-lg">
-                                <option value="">-- Select Semester --</option>
-                                @for ($i = 1; $i <= 6; $i++)
-                                    <option value="{{ $i }}" {{ old('semester') == $i ? 'selected' : '' }}>{{ $i }}</option>
-                                    @endfor
-                            </select>
-                            @error('semester') <div class="text-danger">{{ $message }}</div> @enderror
+
+
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label" for="profile_image">Profile Image</label>
+                            <input type="file" id="profile_image" name="profile_image" class="form-control form-control-lg" accept="image/*">
+                            @error('profile_image') <div class="text-danger">{{ $message }}</div> @enderror
                         </div>
-                        <div class="col-md-4 mb-2">
-                            <label class="form-label" for="city">City</label>
-                            <input type="text" id="city" name="city" value="{{ old('city') }}" class="form-control form-control-lg">
-                            @error('city') <div class="text-danger">{{ $message }}</div> @enderror
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <label class="form-label" for="state">State</label>
-                            <input type="text" id="state" name="state" value="{{ old('state') }}" class="form-control form-control-lg">
-                            @error('state') <div class="text-danger">{{ $message }}</div> @enderror
-                        </div>
+
+
                     </div>
 
                     <!-- Row 5 -->
@@ -168,12 +174,8 @@
 
                     <!-- Row 6 -->
                     <div class="row">
-                        <div class="col-md-6 mb-2">
-                            <label class="form-label" for="profile_image">Profile Image</label>
-                            <input type="file" id="profile_image" name="profile_image" class="form-control form-control-lg" accept="image/*">
-                            @error('profile_image') <div class="text-danger">{{ $message }}</div> @enderror
-                        </div>
-                        <div class="col-md-6 mb-2 d-flex align-items-end">
+
+                        <div class="col-md-12 mb-2 d-flex align-items-end">
                             <button class="btn btn-dark btn-lg w-100 custom-login-btn" type="submit">Register</button>
                         </div>
                     </div>
@@ -182,4 +184,5 @@
         </div>
     </div>
 </div>
+
 @endsection

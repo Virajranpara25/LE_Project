@@ -137,17 +137,10 @@
                             <label class="form-label" for="branch">Faculty Department</label>
                             <select id="branch" name="branch" class="form-control form-control-lg">
                                 <option value="">-- Select Branch --</option>
-                                @foreach([
-                                'Information Technology',
-                                'Electrical Engineering',
-                                'Mechanical Engineering',
-                                'Civil Engineering',
-                                'Chemical Engineering',
-                                'Metallurgy Engineering',
-                                'Information and Communication Technology',
-                                'Ceramic Engineering'
-                                ] as $branch)
-                                <option value="{{ 45 }}" {{ old('branch') == $branch ? 'selected' : '' }}>{{ $branch }}</option>
+                                @foreach($branches as $branch)
+                                <option value="{{ $branch->Br_id }}" {{ old('branch') == $branch->Br_id ? 'selected' : '' }}>
+                                    {{ $branch->Br_name }} {{-- Use correct column name from DB --}}
+                                </option>
                                 @endforeach
                             </select>
                             @error('branch') <div class="text-danger">{{ $message }}</div> @enderror

@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link  href="images/favicon.ico"  rel="shortcut icon">
+    <link href="images/favicon.ico" rel="shortcut icon">
 
     <!-- Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -50,6 +50,9 @@
 
     <!-- Custom css -->
     <link href="design_files/css/custom.css" rel="stylesheet">
+
+    <!-- custom javascript file -->
+    <script src="<?php echo e(asset('js/custom.js')); ?>"></script>
 
     <?php echo $__env->yieldContent('css'); ?>
 </head>
